@@ -1,8 +1,9 @@
+<script lang="ts" setup>
+</script>
+
 <template>
   <div>
     <NuxtRouteAnnouncer />
-     <NuxtWelcome/>
+    <NuxtWelcome />
   </div>
 </template>
-<script lang="ts" setup>
-</script>
