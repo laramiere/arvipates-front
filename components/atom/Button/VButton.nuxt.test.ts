@@ -6,9 +6,24 @@ import {
 } from 'vitest'
 import VButton from './VButton.vue'
 
+const slotContent = 'Mon Bouton'
+
 describe('vButton', () => {
-  const wrapper = mount(VButton)
   it('can mount the VButton component', () => {
-    expect(wrapper.text()).toBe('Click')
+    const wrapper = mount(VButton, {
+      slots: {
+        default: slotContent,
+      },
+    })
+    expect(wrapper.text()).toBe(slotContent)
+  })
+  it('should emit click event', async () => {
+    const wrapper = mount(VButton, {
+      slots: {
+        default: slotContent,
+      },
+    })
+    await wrapper.find('button').trigger('click')
+    expect(wrapper.emitted()).toHaveProperty('click')
   })
 })
