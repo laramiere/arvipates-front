@@ -11,9 +11,14 @@
     --color-black-200: #BFB6A5;
     --color-black-300: #2b1d05;
     --color-black-400: #1B1201;
-    --transition-delay: .6s;
     --transition-property: all;
+    --transition-delay: .4s;
     --transition-timing-function: ease;
     --transition-default: var(--transition-delay) var(--transition-property) var(--transition-timing-function);
+
+    --animation-bounce: var(--transition-property) var(--transition-delay) cubic-bezier(0.35, 1.5, 0.6, 1);
+  }
+  html {
+    @apply font-sans;
   }
 }
