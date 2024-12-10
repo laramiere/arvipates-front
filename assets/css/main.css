@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-ble-100: #F2DDB6;
+    --color-ble-200: #D0B26C;
+    --color-ble-300: #BF9056;
+    --color-black-100: #EDE9E2;
+    --color-black-200: #BFB6A5;
+    --color-black-300: #2b1d05;
+    --color-black-400: #1B1201;
+    --transition-delay: .6s;
+    --transition-property: all;
+    --transition-timing-function: ease;
+    --transition-default: var(--transition-delay) var(--transition-property) var(--transition-timing-function);
+  }
+}
