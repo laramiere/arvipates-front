@@ -16,4 +16,7 @@
     --transition-timing-function: ease;
     --transition-default: var(--transition-delay) var(--transition-property) var(--transition-timing-function);
   }
+  html {
+    @apply font-sans
+  }
 }

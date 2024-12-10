@@ -4,15 +4,7 @@ const emit = defineEmits(['click'])
 
 <template>
   <button
-    class="
-    c-button
-    bg-ble-100
-    text-black-300
-    py-4
-    px-6
-    border
-    border-ble-200
-    rounded-global
+    class="c-button rounded-global border border-ble-200 bg-ble-100 px-6 py-4 text-base font-normal leading-normal text-black-400 hover:text-ble-100
     "
     @click="emit('click')"
   >
@@ -25,7 +17,6 @@ const emit = defineEmits(['click'])
 <style lang="scss" scoped>
 .c-button {
   position: relative;
-  color: var(--color-black-400);
   overflow: hidden;
 
    span {
@@ -61,8 +52,6 @@ const emit = defineEmits(['click'])
   }
 
   &:hover {
-    color: var(--color-black-300);
-
     &::before {
       top: 0;
       border-radius: 0 0 0 0;
