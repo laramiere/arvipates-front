@@ -18,5 +18,14 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/test-utils/module',
+    '@nuxt/fonts',
   ],
+  fonts: {
+    provider: 'google',
+  },
+  eslint: {
+    config: {
+      standalone: false,
+    },
+  },
 })

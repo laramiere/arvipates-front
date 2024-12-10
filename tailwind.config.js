@@ -18,6 +18,9 @@ export default {
       serif: ['Rufina', 'serif'],
     },
     extend: {
+      fontFamily: {
+        custom: ['Urbanist', 'Rufina'],
+      },
       borderRadius: {
         global: '30rem',
       },
