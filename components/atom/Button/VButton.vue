@@ -8,7 +8,7 @@ const emit = defineEmits(['click'])
     "
     @click="emit('click')"
   >
-    <span>
+    <span class="uppercase">
       <slot />
     </span>
   </button>

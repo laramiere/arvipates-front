@@ -13,6 +13,12 @@ export default {
       laptop: '976px',
       desktop: '1440ox',
     },
+    container: {
+      screens: {
+        md: '342px',
+        xl: '1200px',
+      },
+    },
     fontFamily: {
       sans: ['Urbanist', 'sans-serif'],
       serif: ['Rufina', 'serif'],
@@ -29,6 +35,7 @@ export default {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
+      test: '#27a8cc',
       ble: {
         100: 'var(--color-ble-100)',
         200: 'var(--color-ble-200)',
