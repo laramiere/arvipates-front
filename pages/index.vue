@@ -1,6 +1,13 @@
 <script lang="ts" setup>
+import { timetableData } from '@/shared/fakeData'
 </script>
 
 <template>
-  <Hero />
+  <div>
+    <Hero />
+    <Timetable
+      v-if="timetableData.items.length"
+      :timetable="timetableData"
+    />
+  </div>
 </template>
