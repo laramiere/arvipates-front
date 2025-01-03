@@ -3,10 +3,10 @@
 
 <template>
   <div class="c-top-bar bg-black-300 py-2">
-    <div class="container-xl container mx-auto flex content-center justify-between text-black-100">
+    <div class="container-xl container mx-auto flex items-center justify-between text-black-100">
       <div class="c-top-bar__social">
         <nav>
-          <ul class="flex content-center">
+          <ul class="flex items-center">
             <li class="[&:not(:last-child)]:mr-2">
               <a href="#_">
                 <Facebook />

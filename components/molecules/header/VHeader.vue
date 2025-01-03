@@ -5,9 +5,9 @@
     </div>
     <div class="c-header__main relative z-10 rounded-t-3xl bg-black-100">
       <div class="container-xl container mx-auto">
-        <div class="relative flex content-center justify-between border-b border-ble-200 py-2">
+        <div class="relative flex items-center justify-between border-b border-ble-200 py-2">
           <nav class="c-header__nav w-1/2 pr-12">
-            <ul class="flex content-center justify-start">
+            <ul class="flex items-center justify-start">
               <li class="[&:not(:last-child)]:mr-6">
                 <a
                   href="#_"
@@ -38,7 +38,7 @@
             <img src="/arvipates.png" alt="Retour Accueil Arvipates">
           </a>
           <nav class="c-header__nav w-1/2 pl-12">
-            <ul class="flex content-center justify-end">
+            <ul class="flex items-center justify-end">
               <li class="[&:not(:last-child)]:mr-6">
                 <a href="#_" class="block py-4 text-base uppercase text-black-400">
                   Infos Pratiques

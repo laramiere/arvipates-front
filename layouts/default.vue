@@ -1,7 +1,7 @@
 <template>
   <div class="bg-black-100">
     <VHeader />
-    <main class="test h-screen bg-test">
+    <main class="test h-screen bg-black-100">
       <slot />
     </main>
   </div>

@@ -11,12 +11,12 @@ export default {
       smartphone: '480px',
       tablet: '768px',
       laptop: '976px',
-      desktop: '1440ox',
+      desktop: '1442px',
     },
     container: {
       screens: {
-        md: '342px',
-        xl: '1200px',
+        md: '1200px',
+        xl: '1442px',
       },
     },
     fontFamily: {
