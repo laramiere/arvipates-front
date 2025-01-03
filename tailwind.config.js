@@ -28,7 +28,7 @@ export default {
         custom: ['Urbanist', 'Rufina'],
       },
       borderRadius: {
-        global: '30rem',
+        global: '2.1875rem',
       },
     },
 

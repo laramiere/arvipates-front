@@ -9,5 +9,6 @@ import { timetableData } from '@/shared/fakeData'
       v-if="timetableData.items.length"
       :timetable="timetableData"
     />
+    <Slider />
   </div>
 </template>
