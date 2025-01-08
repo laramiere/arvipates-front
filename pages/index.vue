@@ -1,5 +1,9 @@
 <script lang="ts" setup>
-import { sliderData, timetableData } from '@/shared/fakeData'
+import {
+  imageWithTextData,
+  sliderData,
+  timetableData,
+} from '@/shared/fakeData'
 </script>
 
 <template>
@@ -12,5 +16,6 @@ import { sliderData, timetableData } from '@/shared/fakeData'
     <Slider
       :slider-data="sliderData"
     />
+    <ImageWithTextBlock :image-with-text-data="imageWithTextData" />
   </div>
 </template>
