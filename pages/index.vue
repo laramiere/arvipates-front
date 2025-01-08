@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { timetableData } from '@/shared/fakeData'
+import { sliderData, timetableData } from '@/shared/fakeData'
 </script>
 
 <template>
@@ -9,6 +9,8 @@ import { timetableData } from '@/shared/fakeData'
       v-if="timetableData.items.length"
       :timetable="timetableData"
     />
-    <Slider />
+    <Slider
+      :slider-data="sliderData"
+    />
   </div>
 </template>
