@@ -25,3 +25,11 @@
     @apply font-sans
   }
 }
+
+@layer components {
+  .card {
+    position: relative;
+    margin-top: -2.1875rem;
+    top: -2.1875rem;
+  }
+}

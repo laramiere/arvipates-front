@@ -11,7 +11,6 @@ const props = withDefaults(defineProps<{
 
 <template>
   <div
-    :class="{ 'bg-black-400': fullStyle }"
     class="c-content-block"
   >
     <div

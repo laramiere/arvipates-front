@@ -21,7 +21,7 @@ const activeItem = mappingArray[dayIndex]
 </script>
 
 <template>
-  <div class="c-timetable bg-black-400 pb-20 pt-14">
+  <div class="c-timetable bg-black-400 pb-[7.1875rem] pt-14">
     <h2 class="center mb-14 text-center font-serif text-2xl font-bold uppercase leading-8 text-black-100" v-html="props.timetable.title" />
     <div class="container-xl container mx-auto">
       <ul
