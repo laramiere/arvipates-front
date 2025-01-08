@@ -1,5 +1,10 @@
 import type { ContentBlockInterface } from '@/shared/interfaces/index'
 
+export const contentBlockDataWithoutImage: ContentBlockInterface = {
+  title: 'la fabrique  de pâââtes',
+  content: '<p>Au cœur de la vallée du Giffre, à Verchaix, Arvi’pâtes perpétue l’art des pâtes artisanales dans sa fabrique située sous le restaurant.</p><p>Ici, chaque étape de fabrication est réalisée sur place avec des ingrédients rigoureusement sélectionnés, pour créer des pâtes au goût authentique, inspirées par les richesses de notre belle région et notre savoir-faire traditionnel.</p>',
+  cta: 'En savoir plus',
+}
 export const contentBlockData: ContentBlockInterface = {
   title: 'arvi’pââââtes, un lieu convivial et une cuisine gourmande',
   content: `<p>Chez Arvi’pâtes, nous travaillons en circuit court. Nos produits sont issus de l’agriculture raisonnée et tous nos plats sont fait maison et toujours de saison.</p><p>Mais ce qui nous caractérise, c’est avant tout notre belle équipe ! Ici, on aime bien rigoler et on trinque facilement. Arvi’pâtes c’est un lieu de vie épicurien, reflet de notre magnifique terroir. Le soir l’ambiance est à la fête, conversation interminable, rires... Ce qu’on aime le plus ? écouter vos blagounettes avec joyeuseté !</p>`,

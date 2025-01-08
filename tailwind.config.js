@@ -24,6 +24,9 @@ export default {
       serif: ['Rufina', 'serif'],
     },
     extend: {
+      backgroundImage: {
+        flicker: 'url(\'/images/flicker_bg.jpg\')',
+      },
       gridTemplateColumns: {
         'content-block': '20% 60% 20%',
       },

@@ -1,19 +1,35 @@
 <script lang="ts" setup>
 import type { ContentBlockInterface } from '@/shared/interfaces/index'
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   contentBlockData: ContentBlockInterface
-}>()
+  fullStyle?: boolean
+}>(), {
+  fullStyle: true,
+})
 </script>
 
 <template>
-  <div class="c-content-block bg-black-400">
-    <div class="rounded-t-global bg-black-100">
-      <div class="container-xl container mx-auto pb-[3.75rem] pt-20 text-center">
-        <h2 class="m-auto mb-12 max-w-[24.375rem] font-serif text-2xl font-bold uppercase">
+  <div
+    :class="{ 'bg-black-400': fullStyle }"
+    class="c-content-block"
+  >
+    <div
+      :class="{ 'rounded-t-global bg-black-100': fullStyle }"
+    >
+      <div
+        :class="{ 'container-xl container mx-auto pb-[3.75rem] pt-20 text-center': fullStyle }"
+      >
+        <h2
+          :class="{ 'm-auto max-w-[24.375rem]': fullStyle }"
+          class=" mb-12 font-serif text-2xl font-bold uppercase"
+        >
           {{ props.contentBlockData.title }}
         </h2>
-        <div class="c-content-block__main mb-[3.75rem] grid grid-cols-content-block ">
+        <div
+          :class="{ 'grid grid-cols-content-block': fullStyle }"
+          class="c-content-block__main mb-[3.75rem]"
+        >
           <div
             v-if="props.contentBlockData.mediaLeft"
             class="c-content-block__media flex content-start justify-start"

@@ -1,5 +1,6 @@
 export * from './ContentBlock.interface'
 export * from './GlobalComponent.interface'
+export * from './ImageWithTextBlock.interface'
 export * from './Slider.interface'
 export * from './Timetable.interface'
 export * from './TopBar.interface'
