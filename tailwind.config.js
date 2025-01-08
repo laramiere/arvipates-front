@@ -36,6 +36,9 @@ export default {
       borderRadius: {
         global: '2.1875rem',
       },
+      rotate: {
+        4: '4deg',
+      },
     },
 
     colors: {

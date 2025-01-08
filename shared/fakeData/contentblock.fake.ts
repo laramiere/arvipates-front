@@ -1,4 +1,4 @@
-import type { ContentBlockInterface } from '@/shared/interfaces/index'
+import type { ContentBlockCardWithBgInterface, ContentBlockInterface } from '@/shared/interfaces/index'
 
 export const contentBlockDataWithoutImage: ContentBlockInterface = {
   title: 'la fabrique  de pâââtes',
@@ -21,6 +21,21 @@ export const contentBlockData: ContentBlockInterface = {
     file: {
       url: '/images/pate_2.png',
       alternativeText: 'pate',
+    },
+  },
+}
+
+export const contentBlockCardWithBgData: ContentBlockCardWithBgInterface = {
+  content: {
+    content: '<p>Nous cuisinons des produits frais et locaux. Nous sommes très fiers de collaborer avec nos producteurs, tous situés dans la région Auvergne-Rhône-Alpes. Ce sont eux qui, en travaillantla terre de manière responsable, nous fournissent de quoi vous cuisiner de bons plats de saison.</p><p>Nous vous invitons midi et soir à venir déguster une cuisine simple mais exigeante où nous mêlons recettes de grand-mère et convivialité.</p>',
+    cta: 'Voir la cartaa',
+    title: 'Au menu aujourd\'hui...',
+  },
+  background: {
+    id: 'hufir67hje',
+    file: {
+      url: '/images/bg.jpg',
+      alternativeText: 'background',
     },
   },
 }

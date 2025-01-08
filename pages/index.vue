@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import {
+  contentBlockCardWithBgData,
   imageWithTextData,
   sliderData,
   timetableData,
@@ -17,5 +18,6 @@ import {
       :slider-data="sliderData"
     />
     <ImageWithTextBlock :image-with-text-data="imageWithTextData" />
+    <ContentBlockCardWithBg :content-block-card-data="contentBlockCardWithBgData" />
   </div>
 </template>

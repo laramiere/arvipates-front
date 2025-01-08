@@ -7,3 +7,8 @@ export interface ContentBlockInterface {
   mediaLeft?: Picture
   mediaRight?: Picture
 }
+
+export interface ContentBlockCardWithBgInterface {
+  background: Picture
+  content: ContentBlockInterface
+}

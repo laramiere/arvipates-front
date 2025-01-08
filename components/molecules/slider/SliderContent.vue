@@ -27,7 +27,7 @@ const translateValue = computed(() => {
 <template>
   <div
     ref="slider"
-    class="c-slider overflow-hidden bg-black-100 pb-[7.375rem] pt-8"
+    class="c-slider pt-8"
   >
     <div
       class="c-slider__content relative left-[-13.5rem] flex shrink-0 flex-nowrap items-start gap-x-10"
