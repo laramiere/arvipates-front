@@ -38,7 +38,7 @@ const translateValue = computed(() => {
         :key="item.id"
         class="c-slider__item shrink-0 basis-1/4 odd:rotate-[-2.33deg] even:translate-y-[86px] even:rotate-[3.33deg]"
       >
-        <div class="rounded-global border border-ble-200 p-[0.8rem]">
+        <div class="rounded-global border border-black-200 p-[0.8rem]">
           <div class="relative h-0 w-full overflow-hidden rounded-global pt-[132%]">
             <div class="absolute left-0 top-0 size-full">
               <div class="size-full">

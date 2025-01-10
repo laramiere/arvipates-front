@@ -9,20 +9,21 @@ import VButton from './VButton.vue'
 const slotContent = 'Mon Bouton'
 
 describe('vButton', () => {
+  const wrapper = mount(VButton, {
+    slots: {
+      default: slotContent,
+    },
+  })
+
+  it('should render the correct HTML', () => {
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
   it('can mount the VButton component', () => {
-    const wrapper = mount(VButton, {
-      slots: {
-        default: slotContent,
-      },
-    })
     expect(wrapper.text()).toBe(slotContent)
   })
+
   it('should emit click event', async () => {
-    const wrapper = mount(VButton, {
-      slots: {
-        default: slotContent,
-      },
-    })
     await wrapper.find('button').trigger('click')
     expect(wrapper.emitted()).toHaveProperty('click')
   })

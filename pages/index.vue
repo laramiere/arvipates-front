@@ -2,6 +2,7 @@
 import {
   contentBlockCardWithBgData,
   imageWithTextData,
+  PoiData,
   sliderData,
   timetableData,
 } from '@/shared/fakeData'
@@ -19,5 +20,6 @@ import {
     />
     <ImageWithTextBlock :image-with-text-data="imageWithTextData" />
     <ContentBlockCardWithBg :content-block-card-data="contentBlockCardWithBgData" />
+    <Map :poi="PoiData" />
   </div>
 </template>
