@@ -6,5 +6,6 @@ export default defineVitestConfig({
     coverage: {
       provider: 'istanbul',
     },
+    diff: './vitest.diff.ts',
   },
 })
