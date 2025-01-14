@@ -1,3 +1,4 @@
+export type SocialLinkPictoName = 'Facebook' | 'Instagram' | 'Whatsapp'
 export interface Link {
   href: string
   content: string
