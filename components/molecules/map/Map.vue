@@ -43,7 +43,11 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section role="region" aria-label="carte interactive" class="card w-full overflow-hidden rounded-t-global">
+  <section
+    role="region"
+    aria-label="carte interactive"
+    class="card relative z-0 w-full overflow-hidden rounded-t-global"
+  >
     <h2 id="map-title" class="sr-only">
       Carte interactive
     </h2>
