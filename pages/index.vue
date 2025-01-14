@@ -2,6 +2,7 @@
 import {
   contentBlockCardWithBgData,
   imageWithTextData,
+  InstaData,
   PoiData,
   sliderData,
   timetableData,
@@ -21,5 +22,6 @@ import {
     <ImageWithTextBlock :image-with-text-data="imageWithTextData" />
     <ContentBlockCardWithBg :content-block-card-data="contentBlockCardWithBgData" />
     <Map :poi="PoiData" />
+    <Insta :insta-data="InstaData" />
   </div>
 </template>
