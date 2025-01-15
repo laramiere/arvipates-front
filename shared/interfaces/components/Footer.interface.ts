@@ -1,14 +1,8 @@
 import type {
   Link,
   Picture,
-  SocialLinkPictoName,
+  SocialComponentInterface,
 } from '@/shared/interfaces'
-
-export interface FooterSocialLink {
-  ariaLabel: string
-  link: string
-  picto: SocialLinkPictoName
-}
 
 export interface FooterInterface {
   logo: {
@@ -18,9 +12,6 @@ export interface FooterInterface {
   scrollTopButton: {
     title: string
   }
-  socialLink: {
-    title: string
-    items: FooterSocialLink[]
-  }
+  socialLink: SocialComponentInterface
   footerNav: Link[]
 }

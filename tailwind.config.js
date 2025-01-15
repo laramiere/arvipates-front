@@ -25,7 +25,8 @@ export default {
     },
     extend: {
       backgroundImage: {
-        flicker: 'url(\'/images/flicker_bg.jpg\')',
+        flickerW: 'url(\'/images/flicker_bg_w.jpg\')',
+        flickerB: 'url(\'/images/flicker_bg_b.jpg\')',
       },
       gridTemplateColumns: {
         'content-block': '20% 60% 20%',

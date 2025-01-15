@@ -1,15 +1,22 @@
 <script lang="ts" setup>
 import type { FooterInterface } from '@/shared/interfaces'
+import { useWindowScroll } from '@vueuse/core'
 
 const props = defineProps<{
   data: FooterInterface
 }>()
+const { y } = useWindowScroll({
+  behavior: 'smooth',
+})
+function handleScrollTop() {
+  y.value = 0
+}
 </script>
 
 <template>
-  <footer class="card overflow-hidden rounded-t-global bg-black-300 pb-6 pt-20">
+  <footer class="card overflow-hidden rounded-t-global bg-black-300 bg-flickerB pb-6 pt-20">
     <div class="container-xl container mx-auto">
-      <div>
+      <div class="flex justify-between pb-20">
         <a :href="props.data.logo.href">
           <img
             :src="props.data.logo.picture.file.url"
@@ -18,6 +25,7 @@ const props = defineProps<{
         <button
           class="flex flex-col items-center text-black-100"
           :aria-label="props.data.scrollTopButton.title"
+          @click="handleScrollTop"
         >
           <div class="mb-4">
             <Polygon />
@@ -27,8 +35,9 @@ const props = defineProps<{
             {{ props.data.scrollTopButton.title }}
           </span>
         </button>
+        <SocialLink :social="props.data.socialLink" />
       </div>
-      <nav class="border-t border-t-black-100 pt-6">
+      <nav class="c-footer__nav border-t border-t-black-100 pt-6">
         <ul class="flex justify-center">
           <li
             v-for="(item, key) in props.data.footerNav"
