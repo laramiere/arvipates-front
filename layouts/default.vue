@@ -1,9 +1,16 @@
+<script lang="ts" setup>
+import { footerData } from '@/shared/fakeData'
+</script>
+
 <template>
-  <div class="bg-black-100">
+  <div class="mb-[-2.1875rem] bg-black-100">
     <VHeader />
-    <main class="test h-screen bg-black-100">
+    <main class="bg-black-100">
       <slot />
     </main>
+    <VFooter
+      :data="footerData"
+    />
   </div>
 </template>
 

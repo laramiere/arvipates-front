@@ -7,7 +7,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="card rounded-t-global bg-flicker bg-repeat py-20">
+  <div class="card rounded-t-global bg-flickerW bg-repeat py-20">
     <div class="container-xl container mx-auto grid grid-cols-2">
       <div class="c-image-with-text__media grid grid-cols-2 gap-4 pb-[8.625rem]">
         <div

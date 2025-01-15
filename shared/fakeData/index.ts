@@ -1,4 +1,5 @@
 export * from './contentblock.fake'
+export * from './footer.fake'
 export * from './imageWithTextData.fake'
 export * from './insta.fake'
 export * from './Map.fake'

@@ -1,4 +1,5 @@
 export * from './ContentBlock.interface'
+export * from './Footer.interface'
 export * from './GlobalComponent.interface'
 export * from './ImageWithTextBlock.interface'
 export * from './Insta.interface'

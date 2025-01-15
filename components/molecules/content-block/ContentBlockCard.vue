@@ -7,7 +7,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="c-content-block-card rounded-global bg-flicker p-3">
+  <div class="c-content-block-card rounded-global bg-flickerW p-3">
     <div class="rounded-global border border-black-200 px-11 py-14">
       <h2 class="mb-10 text-center font-serif text-2xl font-bold uppercase">
         {{ props.content.title }}
