@@ -1,0 +1,12 @@
+
+.leaflet-map-pane {
+  .leaflet-pane {
+    &:not(.leaflet-marker-pane) {
+      filter: grayscale(1);
+    }
+  }
+}
+.leaflet-div-icon {
+  background-color: transparent;
+  border: none;
+}
