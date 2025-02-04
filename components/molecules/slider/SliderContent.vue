@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import type { Picture } from '@/shared/interfaces'
-import { useElementBounding, useElementVisibility } from '@vueuse/core'
-import { ref } from 'vue'
 
 const props = defineProps<{
   items: Picture[]
 }>()
+
 const slider = ref(null)
+/*
 const isVisible = useElementVisibility(slider)
-const { top } = useElementBounding(slider)
+ const { top } = useElementBounding(slider)
 const { y } = useScroll(window)
 const translateValue = computed(() => {
   if (!isVisible.value) {
@@ -21,7 +21,7 @@ const translateValue = computed(() => {
   }
 
   return 0
-})
+}) */
 </script>
 
 <template>
@@ -29,17 +29,14 @@ const translateValue = computed(() => {
     ref="slider"
     class="c-slider pt-8"
   >
-    <div
-      class="c-slider__content relative left-[-13.5rem] flex shrink-0 flex-nowrap items-start gap-x-10"
-      :style="{ transform: `translateX(${translateValue}px)` }"
-    >
+    <div class="c-slider__content relative left-[-20%] flex shrink-0 flex-nowrap items-start gap-x-8 tablet:gap-x-[1.875rem] desktop:gap-x-[50px]">
       <div
         v-for="item in props.items"
         :key="item.id"
-        class="c-slider__item shrink-0 basis-1/4 odd:rotate-[-2.33deg] even:translate-y-[86px] even:rotate-[3.33deg]"
+        class="c-slider__item shrink-0 basis-[51.28%] origin-center odd:-rotate-3  even:translate-y-[24px] even:rotate-3 tablet:basis-[30%] tablet:even:translate-y-[54px] tablet:even:rotate-[3.33deg]"
       >
-        <div class="rounded-global border border-black-200 p-[0.8rem]">
-          <div class="relative h-0 w-full overflow-hidden rounded-global pt-[132%]">
+        <div class="rounded-global border border-black-200 p-[7px] tablet:p-[0.8rem]">
+          <div class="relative h-0 w-full overflow-hidden rounded-global pt-[120%] tablet:pt-[132%]">
             <div class="absolute left-0 top-0 size-full">
               <div class="size-full">
                 <img

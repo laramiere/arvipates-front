@@ -7,7 +7,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="card overflow-hidden rounded-t-global bg-black-100 pb-[12.5625rem]">
+  <div class="card overflow-hidden rounded-t-global bg-black-100 pb-[6.5rem] tablet:pb-[12.5625rem]">
     <ContentBlock :content-block-data="props.sliderData.content" />
     <SliderContent :items="props.sliderData.slides" />
   </div>
