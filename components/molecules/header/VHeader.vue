@@ -1,9 +1,24 @@
+<script lang="ts" setup>
+import { topBarData } from '@/shared/fakeData'
+import { useWindowScroll } from '@vueuse/core'
+
+const { arrivedState, y } = useWindowScroll({ behavior: 'smooth' })
+</script>
+
 <template>
-  <header class="c-header absolute left-0 top-0 w-full">
+  <header
+    class="c-header fixed left-0 top-0 z-40 w-full bg-black-100"
+  >
     <div class="c-header__top absolute left-0 top-0 z-0 size-full bg-black-300">
-      <TopBar />
+      <TopBar :top-bar="topBarData" />
     </div>
-    <div class="c-header__main relative z-10 rounded-t-3xl bg-black-100">
+    <div
+      :class="{
+        'top-0 rounded-t-none': y > 0 && !arrivedState.top,
+        'top-[2.625rem]': y === 0,
+      }"
+      class="c-header__main relative  z-10 rounded-t-3xl bg-black-100"
+    >
       <div class="container-xl container mx-auto">
         <div class="relative flex items-center justify-between border-b border-ble-200 py-2">
           <nav class="c-header__nav w-1/2 pr-12">
@@ -64,7 +79,6 @@
   }
 
   &__main {
-    top: 42px;
     transition: var(--animation-bounce);
   }
 }

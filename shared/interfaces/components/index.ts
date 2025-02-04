@@ -1,6 +1,7 @@
 export * from './ContentBlock.interface'
 export * from './Footer.interface'
 export * from './GlobalComponent.interface'
+export * from './Header.interface'
 export * from './ImageWithTextBlock.interface'
 export * from './Insta.interface'
 export * from './Map.interface'
