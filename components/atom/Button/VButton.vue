@@ -4,7 +4,7 @@ const emit = defineEmits(['click'])
 
 <template>
   <button
-    class="c-button rounded-global border border-ble-200 bg-ble-100 px-6 py-4 text-base font-normal leading-normal text-black-400 hover:text-ble-100
+    class="c-button rounded-global border border-ble-200 bg-ble-100 px-4 py-2 text-xs font-normal leading-normal text-black-400 hover:text-ble-100 tablet:p-6 tablet:text-base
     "
     @click="emit('click')"
   >
