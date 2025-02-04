@@ -18,16 +18,17 @@ const props = withDefaults(defineProps<{
     >
       <div
         :class="{ 'container-xl container mx-auto pb-[3.75rem] pt-20 text-center': fullStyle }"
+        class="flex flex-col items-center tablet:block"
       >
         <h2
           :class="{ 'm-auto max-w-[24.375rem]': fullStyle }"
-          class=" mb-12 font-serif text-2xl font-bold uppercase"
+          class=" mb-6 w-full font-serif font-bold uppercase tablet:mb-12 tablet:w-auto tablet:text-2xl"
         >
           {{ props.contentBlockData.title }}
         </h2>
         <div
           :class="{ 'grid grid-cols-content-block': fullStyle }"
-          class="c-content-block__main mb-[3.75rem]"
+          class="c-content-block__main mb-6 tablet:mb-[3.75rem]"
         >
           <div
             v-if="props.contentBlockData.mediaLeft"
@@ -40,7 +41,10 @@ const props = withDefaults(defineProps<{
               loading="lazy"
             >
           </div>
-          <div class="c-content-block__content text-base" v-html="props.contentBlockData.content" />
+          <div
+            class="c-content-block__content text-base"
+            v-html="props.contentBlockData.content"
+          />
           <div
             v-if="props.contentBlockData.mediaRight"
             class="c-content-block__media flex content-end justify-end"
@@ -61,7 +65,7 @@ const props = withDefaults(defineProps<{
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .c-content-block {
   &__content {
     p {
