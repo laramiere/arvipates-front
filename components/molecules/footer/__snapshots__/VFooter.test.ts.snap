@@ -1,19 +1,19 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`vFooter > should render correct HTML 1`] = `
-"<footer class="card overflow-hidden rounded-t-global bg-black-300 bg-flickerB pb-6 pt-20">
-  <div class="container-xl container mx-auto">
-    <div class="flex justify-between pb-20"><a href="/"><img src="/images/logo_footer.png"></a><button class="flex flex-col items-center text-black-100" aria-label="Retour en haut de la page">
+"<footer class="card overflow-hidden rounded-t-global bg-black-300 bg-flickerB py-10 desktop:pb-6 desktop:pt-20">
+  <div class="desktop:container-xl container mx-auto px-[1.5625rem] desktop:px-0">
+    <div class="flex flex-col items-center justify-between pb-10 tablet:flex-row tablet:pb-20"><a href="/" class="mb-10 desktop:mb-0"><img src="/images/logo_footer.png"></a><button class="mb-10 flex flex-col items-center text-black-100 desktop:mb-0" aria-label="Retour en haut de la page">
         <div class="mb-4"><svg width="29" height="25" viewBox="0 0 29 25" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.7894 2.14824L27.4296 21.7336C28.0239 22.7335 27.3033 24 26.1401 24H2.85971C1.69657 24 0.975999 22.7335 1.57026 21.7336L13.2105 2.14824C13.7918 1.17005 15.208 1.17005 15.7894 2.14824Z" stroke="#D0B26C"></path>
           </svg><svg width="29" height="25" viewBox="0 0 29 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-[10px]">
             <path d="M15.7894 2.14824L27.4296 21.7336C28.0239 22.7335 27.3033 24 26.1401 24H2.85971C1.69657 24 0.975999 22.7335 1.57026 21.7336L13.2105 2.14824C13.7918 1.17005 15.208 1.17005 15.7894 2.14824Z" stroke="#D0B26C"></path>
-          </svg></div><span class="block max-w-[8.125rem] font-sans text-base uppercase">Retour en haut de la page</span>
+          </svg></div><span class="block max-w-[8.125rem] font-sans text-base uppercase desktop:max-w-[8.125rem]">Retour en haut de la page</span>
       </button>
       <div data-v-6ef67cee="" class="c-social-link">
-        <p data-v-6ef67cee="" class="mb-3 max-w-[11.25rem] text-base uppercase text-black-100">Suivez-nous sur les réseaux sociaux !</p>
+        <p data-v-6ef67cee="" class="mb-3 max-w-[11.45rem] text-center text-base uppercase text-black-100 tablet:text-left">Suivez-nous sur les réseaux sociaux !</p>
         <nav data-v-6ef67cee="">
-          <ul data-v-6ef67cee="" class="flex">
+          <ul data-v-6ef67cee="" class="flex justify-center tablet:justify-start">
             <li data-v-6ef67cee="" class="[&amp;:not(:last-child)]:mr-6"><a data-v-6ef67cee="" href="/" aria-label="Nous suivre sur Instagram" class="block text-black-100"><svg data-v-6ef67cee="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-label="Visitez la page Instagram arvipate">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
                 </svg></a></li>
@@ -25,10 +25,10 @@ exports[`vFooter > should render correct HTML 1`] = `
       </div>
     </div>
     <nav class="c-footer__nav border-t border-t-black-100 pt-6">
-      <ul class="flex justify-center">
-        <li class="flex items-center font-sans text-base font-normal uppercase leading-none"><a href="/" class="block text-black-100 no-underline">Politique de confidentialité</a><span class="mx-3 block size-[4px] rounded-[100%] bg-black-100"></span></li>
-        <li class="flex items-center font-sans text-base font-normal uppercase leading-none"><a href="/" class="block text-black-100 no-underline">Crédits</a><span class="mx-3 block size-[4px] rounded-[100%] bg-black-100"></span></li>
-        <li class="flex items-center font-sans text-base font-normal uppercase leading-none"><a href="/" class="block text-black-100 no-underline">Mentions Légales</a>
+      <ul class="justify-center text-center tablet:flex">
+        <li class="inline-block items-center font-sans text-base font-normal uppercase leading-none tablet:mr-0 tablet:flex [&amp;:not(:last-child)]:mr-3"><a href="/" class="block text-black-100 no-underline">Politique de confidentialité</a><span class="mx-3 hidden size-[4px] rounded-[100%] bg-black-100 tablet:block"></span></li>
+        <li class="inline-block items-center font-sans text-base font-normal uppercase leading-none tablet:mr-0 tablet:flex [&amp;:not(:last-child)]:mr-3"><a href="/" class="block text-black-100 no-underline">Crédits</a><span class="mx-3 hidden size-[4px] rounded-[100%] bg-black-100 tablet:block"></span></li>
+        <li class="inline-block items-center font-sans text-base font-normal uppercase leading-none tablet:mr-0 tablet:flex [&amp;:not(:last-child)]:mr-3"><a href="/" class="block text-black-100 no-underline">Mentions Légales</a>
           <!--v-if-->
         </li>
       </ul>
