@@ -1,7 +1,11 @@
-import type { Link } from '@/shared/interfaces'
+import type { SocialLinkInterface } from '@/shared/interfaces'
 
-type TopBarInfo = Link | string
 export interface TopBarInterface {
-  socialLink: Link[]
-  info: TopBarInfo
+  social: SocialLinkInterface[]
+  address: {
+    street: string
+    zipcode: string
+    city: string
+    gmapLink?: string
+  }
 }
