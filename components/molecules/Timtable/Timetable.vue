@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import type { Timetable } from '@/shared/interfaces'
+import { onMounted, ref } from 'vue'
 
 type KeyType = 0 | 1 | 2 | 3 | 4 | 5 | 6
-
 const props = defineProps<{
   timetable: Timetable
 }>()
-
+const timetableList = ref<HTMLElement | null>(null)
 const dayIndex: KeyType = new Date().getDay() as KeyType
 const mappingArray = {
   0: 6,
@@ -18,21 +18,37 @@ const mappingArray = {
   6: 5,
 }
 const activeItem = mappingArray[dayIndex]
+onMounted(async () => {
+  await nextTick()
+  if (!timetableList.value) {
+    return
+  }
+  const activeItem = timetableList.value.querySelector('.actif') as HTMLElement | null
+  const activeItemPositionX = activeItem?.getBoundingClientRect().x
+
+  if (activeItemPositionX) {
+    timetableList.value.scrollTo({
+      left: timetableList.value.scrollLeft + activeItemPositionX - 32,
+      behavior: 'smooth',
+    })
+  }
+})
 </script>
 
 <template>
   <div class="c-timetable bg-black-400 pb-[7.1875rem] pt-14">
     <h2 class="center mb-14 text-center font-serif text-2xl font-bold uppercase leading-8 text-black-100" v-html="props.timetable.title" />
-    <div class="container-xl container mx-auto">
+    <div class="container-xl container mx-auto px-[1.5625rem] desktop:px-0">
       <ul
         v-if="props.timetable.items.length"
-        class="flex justify-between"
+        ref="timetableList"
+        class="flex flex-nowrap overflow-x-auto desktop:justify-between"
       >
         <li
           v-for="(item, key) in props.timetable.items"
           :key="item.id"
-          :class="{ 'opacity-30': activeItem !== key }"
-          class="border-b-2 border-ble-200 pb-4 hover:cursor-default hover:opacity-100"
+          :class="{ 'opacity-30': activeItem !== key, 'actif': activeItem === key }"
+          class="w-[100px] shrink-0 grow border-b-2 border-ble-200 pb-4 hover:cursor-default hover:opacity-100 tablet:w-auto [&:not(:last-child)]:mr-8 desktop:[&:not(:last-child)]:mr-0"
         >
           <p class="mb-4 font-semibold uppercase leading-none text-black-200">
             {{ item.title }}
