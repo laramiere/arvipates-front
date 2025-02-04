@@ -37,7 +37,7 @@ exports[`vHeader > should render good HTML structur 1`] = `
         <nav data-v-af2ef6f1="" class="c-header__nav w-1/2 pl-12">
           <ul data-v-af2ef6f1="" class="flex items-center justify-end">
             <li data-v-af2ef6f1="" class="[&amp;:not(:last-child)]:mr-6"><a data-v-af2ef6f1="" href="#_" class="block py-4 text-base uppercase text-black-400"> Infos Pratiques </a></li>
-            <li data-v-af2ef6f1="" class="[&amp;:not(:last-child)]:mr-6"><button data-v-363074cd="" data-v-af2ef6f1="" class="c-button rounded-global border border-ble-200 bg-ble-100 px-6 py-4 text-base font-normal leading-normal text-black-400 hover:text-ble-100"><span data-v-363074cd="" class="uppercase"> Réserver </span></button></li>
+            <li data-v-af2ef6f1="" class="[&amp;:not(:last-child)]:mr-6"><button data-v-363074cd="" data-v-af2ef6f1="" class="c-button rounded-global border border-ble-200 bg-ble-100 px-4 py-2 text-xs font-normal leading-normal text-black-400 hover:text-ble-100 tablet:p-6 tablet:text-base"><span data-v-363074cd="" class="uppercase"> Réserver </span></button></li>
           </ul>
         </nav>
       </div>
