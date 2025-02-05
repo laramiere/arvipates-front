@@ -12,7 +12,7 @@ const getAddress = computed(() => {
 
 <template>
   <div class="c-top-bar bg-black-300 py-2">
-    <div class="container-xl container mx-auto flex items-center justify-between text-black-100">
+    <div class="container-xl container mx-auto flex items-center justify-between px-[1.5625rem] text-black-100 desktop:px-0">
       <div class="c-top-bar__social">
         <nav>
           <ul class="flex items-center">

@@ -2,7 +2,7 @@
 
 exports[`topBar > should render correct HTML 1`] = `
 "<div data-v-04de395c="" class="c-top-bar bg-black-300 py-2">
-  <div data-v-04de395c="" class="container-xl container mx-auto flex items-center justify-between text-black-100">
+  <div data-v-04de395c="" class="container-xl container mx-auto flex items-center justify-between px-[1.5625rem] text-black-100 desktop:px-0">
     <div data-v-04de395c="" class="c-top-bar__social">
       <nav data-v-04de395c="">
         <ul data-v-04de395c="" class="flex items-center">

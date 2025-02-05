@@ -36,7 +36,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="c-hero overflow relative pt-20 laptop:pt-[18.75rem]">
+  <div class="c-hero relative overflow-hidden pt-20 laptop:pt-[18.75rem]">
     <div
       ref="heroContent"
       class="c-hero__content relative z-30 flex flex-col items-center justify-center px-[1.5625rem] laptop:absolute laptop:left-1/2 laptop:top-32 laptop:-translate-x-1/2"

@@ -4,7 +4,7 @@ exports[`vHeader > should render good HTML structur 1`] = `
 "<header data-v-af2ef6f1="" class="c-header fixed left-0 top-0 z-40 w-full bg-black-100">
   <div data-v-af2ef6f1="" class="c-header__top absolute left-0 top-0 z-0 size-full bg-black-300">
     <div data-v-04de395c="" data-v-af2ef6f1="" class="c-top-bar bg-black-300 py-2">
-      <div data-v-04de395c="" class="container-xl container mx-auto flex items-center justify-between text-black-100">
+      <div data-v-04de395c="" class="container-xl container mx-auto flex items-center justify-between px-[1.5625rem] text-black-100 desktop:px-0">
         <div data-v-04de395c="" class="c-top-bar__social">
           <nav data-v-04de395c="">
             <ul data-v-04de395c="" class="flex items-center">
@@ -26,22 +26,28 @@ exports[`vHeader > should render good HTML structur 1`] = `
   </div>
   <div data-v-af2ef6f1="" class="top-[2.625rem] c-header__main relative z-10 rounded-t-3xl bg-black-100">
     <div data-v-af2ef6f1="" class="container-xl container mx-auto">
-      <div data-v-af2ef6f1="" class="relative flex items-center justify-between border-b border-ble-200 py-2">
-        <nav class="c-header__nav w-1/2 pr-12" data-v-af2ef6f1="">
+      <div data-v-af2ef6f1="" class="relative flex items-center justify-between border-b border-ble-200 px-[1.5625rem] py-2 desktop:px-0">
+        <nav class="c-header__nav hidden w-1/2 pr-12 laptop:block" data-v-af2ef6f1="">
           <ul class="flex items-center justify-start" data-v-af2ef6f1="">
             <li class="[&amp;:not(:last-child)]:mr-6" data-v-af2ef6f1=""><a href="#_" class="block py-4 text-base uppercase text-black-400" data-v-af2ef6f1=""> Le concept </a></li>
             <li class="[&amp;:not(:last-child)]:mr-6" data-v-af2ef6f1=""><a href="#_" class="block py-4 text-base uppercase text-black-400" data-v-af2ef6f1=""> La carte </a></li>
             <li class="[&amp;:not(:last-child)]:mr-6" data-v-af2ef6f1=""><a href="#_" class="block py-4 text-base uppercase text-black-400" data-v-af2ef6f1=""> Les évènements </a></li>
           </ul>
-        </nav><a class="c-header__logo absolute left-1/2 top-2 block -translate-x-1/2" href="#_" data-v-af2ef6f1=""><img src="/arvipates.png" alt="Retour Accueil Arvipates" data-v-af2ef6f1=""></a>
-        <nav data-v-af2ef6f1="" class="c-header__nav w-1/2 pl-12">
+        </nav><a class="c-header__logo absolute top-2 block laptop:left-1/2 laptop:-translate-x-1/2" href="#_" data-v-af2ef6f1=""><img src="/arvipates.png" alt="Retour Accueil Arvipates" data-v-af2ef6f1=""></a>
+        <nav data-v-af2ef6f1="" class="c-header__nav hidden w-1/2 pl-12 laptop:block">
           <ul data-v-af2ef6f1="" class="flex items-center justify-end">
             <li data-v-af2ef6f1="" class="[&amp;:not(:last-child)]:mr-6"><a data-v-af2ef6f1="" href="#_" class="block py-4 text-base uppercase text-black-400"> Infos Pratiques </a></li>
-            <li data-v-af2ef6f1="" class="[&amp;:not(:last-child)]:mr-6"><button data-v-363074cd="" data-v-af2ef6f1="" class="c-button rounded-global border border-ble-200 bg-ble-100 px-4 py-2 text-xs font-normal leading-normal text-black-400 hover:text-ble-100 tablet:p-6 tablet:text-base"><span data-v-363074cd="" class="uppercase"> Réserver </span></button></li>
+            <li data-v-af2ef6f1="" class="[&amp;:not(:last-child)]:mr-6"><button data-v-363074cd="" data-v-af2ef6f1="" class="c-button rounded-global border border-ble-200 bg-ble-100 px-4 py-2 text-xs font-normal leading-normal text-black-400 hover:text-ble-100 tablet:px-6 tablet:py-4 tablet:text-base"><span data-v-363074cd="" class="uppercase"> Réserver </span></button></li>
           </ul>
         </nav>
+        <div data-v-af2ef6f1="" class="flex w-full items-center justify-end laptop:hidden"><button data-v-363074cd="" data-v-af2ef6f1="" class="c-button rounded-global border border-ble-200 bg-ble-100 px-4 py-2 text-xs font-normal leading-normal text-black-400 hover:text-ble-100 tablet:px-6 tablet:py-4 tablet:text-base mr-2 flex h-12 items-center"><span data-v-363074cd="" class="uppercase"> Réserver </span></button><button data-v-d02c27e8="" data-v-af2ef6f1="" class="relative size-12 rounded-full border border-ble-200 bg-ble-100" aria-label="ouvrir menu de navigation">
+            <div data-v-d02c27e8="" class="absolute left-1/2 top-1/2 h-4 w-6 -translate-x-1/2 -translate-y-1/2"><span data-v-d02c27e8="" class="absolute left-0 block h-[2px] w-6 rounded-global bg-ble-200 opacity-100"></span><span data-v-d02c27e8="" class="absolute left-0 block h-[2px] w-6 rounded-global bg-ble-200 opacity-100"></span><span data-v-d02c27e8="" class="absolute left-0 block h-[2px] w-6 rounded-global bg-ble-200 opacity-100"></span></div>
+          </button></div>
       </div>
     </div>
   </div>
+  <transition-stub data-v-af2ef6f1="" name="headerMenuMobile" appear="false" persisted="false" css="true">
+    <!--v-if-->
+  </transition-stub>
 </header>"
 `;
