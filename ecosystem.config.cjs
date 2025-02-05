@@ -2,9 +2,9 @@ module.exports = {
   apps: [
     {
       name: 'arvipates-front',
-      port: '3000',
+      port: '3002',
       exec_mode: 'cluster',
-      instances: 'max',
+      instances: '1',
       script: '.output/server/index.mjs',
       env: {
         NODE_ENV: 'production',
