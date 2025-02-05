@@ -1,3 +1,3 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`vButton > should render the correct HTML 1`] = `"<button data-v-363074cd="" class="c-button rounded-global border border-ble-200 bg-ble-100 px-6 py-4 text-base font-normal leading-normal text-black-400 hover:text-ble-100"><span data-v-363074cd="" class="uppercase">Mon Bouton</span></button>"`;
+exports[`vButton > should render the correct HTML 1`] = `"<button data-v-363074cd="" class="c-button rounded-global border border-ble-200 bg-ble-100 px-4 py-2 text-xs font-normal leading-normal text-black-400 hover:text-ble-100 tablet:px-6 tablet:py-4 tablet:text-base"><span data-v-363074cd="" class="uppercase">Mon Bouton</span></button>"`;

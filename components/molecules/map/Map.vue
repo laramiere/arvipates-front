@@ -51,7 +51,7 @@ onMounted(async () => {
     <h2 id="map-title" class="sr-only">
       Carte interactive
     </h2>
-    <div id="map" class="w-full pt-[33.69%]">
+    <div id="map" class="w-full pt-[121.555%] tablet:pt-[33.69%]">
       <p class="sr-only">
         Carte non disponible sans JavaScript activé.
       </p>

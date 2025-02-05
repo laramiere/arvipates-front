@@ -10,11 +10,11 @@ const props = defineProps<{
   <div
     class="c-social-link"
   >
-    <p class="mb-3 max-w-[11.25rem] text-base uppercase text-black-100">
+    <p class="mb-3 max-w-[11.45rem] text-center text-base uppercase text-black-100 tablet:text-left">
       {{ props.social.title }}
     </p>
     <nav>
-      <ul class="flex">
+      <ul class="flex justify-center tablet:justify-start">
         <li
           v-for="(item, key) in props.social.items"
           :key="`${key}-socialLink`"

@@ -1,25 +1,28 @@
 <script lang="ts" setup>
+import type { TopBarInterface } from '@/shared/interfaces'
+import { computed } from 'vue'
+
+const props = defineProps<{
+  topBar: TopBarInterface
+}>()
+const getAddress = computed(() => {
+  return `${props.topBar.address.street} - ${props.topBar.address.zipcode} ${props.topBar.address.city.toUpperCase()}`
+})
 </script>
 
 <template>
   <div class="c-top-bar bg-black-300 py-2">
-    <div class="container-xl container mx-auto flex items-center justify-between text-black-100">
+    <div class="container-xl container mx-auto flex items-center justify-between px-[1.5625rem] text-black-100 desktop:px-0">
       <div class="c-top-bar__social">
         <nav>
           <ul class="flex items-center">
-            <li class="[&:not(:last-child)]:mr-2">
-              <a href="#_">
-                <Facebook />
-              </a>
-            </li>
-            <li class="[&:not(:last-child)]:mr-2">
-              <a href="#_">
-                <Instagram />
-              </a>
-            </li>
-            <li class="[&:not(:last-child)]:mr-2">
-              <a href="#_">
-                <Whatsapp />
+            <li
+              v-for="(item, key) in props.topBar.social"
+              :key="`topbar-social-${key}`"
+              class="[&:not(:last-child)]:mr-2"
+            >
+              <a :href="item.link" :aria-label="item.ariaLabel">
+                <IconGenerator :name="item.picto" />
               </a>
             </li>
           </ul>
@@ -27,10 +30,13 @@
       </div>
       <div class="c-top-bar__info">
         <a
+          v-if="props.topBar.address.gmapLink"
           class="text-black-100"
-          href="https://www.google.com/maps/place/Rte+des+Hottes,+74440+Verchaix/@46.0920687,6.6682631,17z/data=!3m1!4b1!4m6!3m5!1s0x478c01f50bf3c017:0xe6a09dc2f11a4224!8m2!3d46.092065!4d6.670838!16s%2Fg%2F11ld14t6rv?entry=ttu&g_ep=EgoyMDI0MTIwOC4wIKXMDSoASAFQAw%3D%3D"
+          target="_blank"
+          aria-label="Visualisez itinéraire dans un nouvel onglet"
+          :href="props.topBar.address.gmapLink"
         >
-          Les Hottes Ouest - 74440 VERCHAIX
+          {{ getAddress }}
         </a>
       </div>
     </div>

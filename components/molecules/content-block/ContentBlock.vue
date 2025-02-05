@@ -17,21 +17,22 @@ const props = withDefaults(defineProps<{
       :class="{ 'rounded-t-global bg-black-100': fullStyle }"
     >
       <div
-        :class="{ 'container-xl container mx-auto pb-[3.75rem] pt-20 text-center': fullStyle }"
+        :class="{ 'container-xl container mx-auto px-[1.5625rem] pt-10 text-center tablet:pb-[3.75rem] tablet:pt-20 desktop:px-0': fullStyle }"
+        class="flex flex-col items-center tablet:block"
       >
         <h2
-          :class="{ 'm-auto max-w-[24.375rem]': fullStyle }"
-          class=" mb-12 font-serif text-2xl font-bold uppercase"
+          :class="{ 'm-auto mb-0 max-w-[24.375rem]': fullStyle }"
+          class=" mb-6 w-full font-serif font-bold uppercase tablet:mb-12 tablet:w-auto tablet:text-2xl"
         >
           {{ props.contentBlockData.title }}
         </h2>
         <div
-          :class="{ 'grid grid-cols-content-block': fullStyle }"
-          class="c-content-block__main mb-[3.75rem]"
+          :class="{ 'flex grid-cols-content-block flex-col items-center tablet:grid': fullStyle }"
+          class="c-content-block__main mb-6 tablet:mb-[3.75rem]"
         >
           <div
             v-if="props.contentBlockData.mediaLeft"
-            class="c-content-block__media flex content-start justify-start"
+            class="c-content-block__media -rotate-90 content-start justify-start tablet:flex tablet:rotate-0"
           >
             <img
               class="block size-auto"
@@ -40,10 +41,13 @@ const props = withDefaults(defineProps<{
               loading="lazy"
             >
           </div>
-          <div class="c-content-block__content text-base" v-html="props.contentBlockData.content" />
+          <div
+            class="c-content-block__content text-base"
+            v-html="props.contentBlockData.content"
+          />
           <div
             v-if="props.contentBlockData.mediaRight"
-            class="c-content-block__media flex content-end justify-end"
+            class="c-content-block__media hidden content-end justify-end tablet:flex"
           >
             <img
               class="block size-auto"
@@ -61,7 +65,7 @@ const props = withDefaults(defineProps<{
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .c-content-block {
   &__content {
     p {
