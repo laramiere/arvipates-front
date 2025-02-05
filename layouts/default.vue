@@ -5,7 +5,7 @@ import { footerData } from '@/shared/fakeData'
 <template>
   <div class="mb-[-2.1875rem] bg-black-100">
     <VHeader />
-    <main class="bg-black-100">
+    <main class="bg-black-100 pt-[6.625rem] tablet:pt-[7.3125rem] laptop:pt-[9.125rem]">
       <slot />
     </main>
     <VFooter
@@ -13,9 +13,3 @@ import { footerData } from '@/shared/fakeData'
     />
   </div>
 </template>
-
-<style lang="scss" scoped>
-main {
-  padding-top: 146px;
-}
-</style>
