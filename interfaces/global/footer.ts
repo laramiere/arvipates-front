@@ -1,15 +1,7 @@
-import type { StrapiBaseInterface } from '@/interfaces'
+import type { StrapiBaseInterface, StrapiSocialLinkInterface } from '@/interfaces'
 
 export interface FooterInterface extends StrapiBaseInterface {
-  SocialLink: {
-    title: string
-    cta: {
-      title: string
-      href: string
-      external: boolean
-      picto: string
-    }[]
-  }
+  SocialLink: StrapiSocialLinkInterface
   navigation_items: {
     pageTitle: string
     pageLink: string
