@@ -1,10 +1,13 @@
 <script lang="ts" setup>
-import type { TopBarInterface } from '@/shared/interfaces'
+import type { TopBarInterface } from '@/interfaces'
 import { computed } from 'vue'
 
 const props = defineProps<{
   topBar: TopBarInterface
 }>()
+const activeSocialCta = computed(() => {
+  return props.topBar.SocialLink.cta.filter(item => item.visible)
+})
 const getAddress = computed(() => {
   return `${props.topBar.address.street} - ${props.topBar.address.zipcode} ${props.topBar.address.city.toUpperCase()}`
 })
@@ -17,11 +20,15 @@ const getAddress = computed(() => {
         <nav>
           <ul class="flex items-center">
             <li
-              v-for="(item, key) in props.topBar.social"
-              :key="`topbar-social-${key}`"
+              v-for="item in activeSocialCta"
+              :key="`topbar-social-${item.id}`"
               class="[&:not(:last-child)]:mr-2"
             >
-              <a :href="item.link" :aria-label="item.ariaLabel">
+              <a
+                :href="item.href"
+                :aria-label="item.title"
+                target="_blank"
+              >
                 <IconGenerator :name="item.picto" />
               </a>
             </li>
@@ -30,11 +37,11 @@ const getAddress = computed(() => {
       </div>
       <div class="c-top-bar__info">
         <a
-          v-if="props.topBar.address.gmapLink"
+          v-if="props.topBar.address.href"
           class="text-black-100"
           target="_blank"
           aria-label="Visualisez itinéraire dans un nouvel onglet"
-          :href="props.topBar.address.gmapLink"
+          :href="props.topBar.address.href"
         >
           {{ getAddress }}
         </a>
