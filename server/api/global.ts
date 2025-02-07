@@ -34,6 +34,9 @@ const footerQueryString = qs.stringify({
     SocialLink: {
       populate: '*',
     },
+    navigation_items: {
+      populate: '*',
+    },
   },
 })
 

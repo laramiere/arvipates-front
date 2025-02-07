@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { SocialComponentInterface } from '@/shared/interfaces'
+import type { StrapiSocialLinkInterface } from '@/interfaces'
 
 const props = defineProps<{
-  social: SocialComponentInterface
+  social: StrapiSocialLinkInterface
 }>()
 </script>
 
@@ -15,21 +15,26 @@ const props = defineProps<{
     </p>
     <nav>
       <ul class="flex justify-center tablet:justify-start">
-        <li
-          v-for="(item, key) in props.social.items"
+        <template
+          v-for="(item, key) in props.social.cta"
           :key="`${key}-socialLink`"
-          class="[&:not(:last-child)]:mr-6"
         >
-          <a
-            :href="item.link"
-            :aria-label="item.ariaLabel"
-            class="block text-black-100"
+          <li
+            v-if="item.visible"
+            class="[&:not(:last-child)]:mr-6"
           >
-            <IconGenerator
-              :name="item.picto"
-            />
-          </a>
-        </li>
+            <a
+              :href="item.href"
+              target="_blank"
+              :aria-label="item.title"
+              class="block text-black-100"
+            >
+              <IconGenerator
+                :name="item.picto"
+              />
+            </a>
+          </li>
+        </template>
       </ul>
     </nav>
   </div>
