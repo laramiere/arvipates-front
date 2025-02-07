@@ -1,11 +1,15 @@
 <script lang="ts" setup>
+import type { StrapiNavigationItemInterface } from '@/interfaces'
 import { onMounted } from 'vue'
 
-const itemToDisplay = ref<string[]>([])
+const props = defineProps<{
+  navigationItems: StrapiNavigationItemInterface[]
+}>()
+const itemToDisplay = ref<StrapiNavigationItemInterface[]>([])
 
 onMounted(() => {
   setTimeout(() => {
-    itemToDisplay.value.push(...['Le concept', 'La carte', 'Les évènements', 'Infos Pratiques'])
+    itemToDisplay.value.push(...props.navigationItems)
   }, 300)
 })
 </script>
@@ -21,19 +25,23 @@ onMounted(() => {
         name="itemMenu"
         appear
       >
-        <li
+        <template
           v-for="(item, key) in itemToDisplay"
-          :key="`nav-${key}`"
-          class="border-b border-ble-200 transition"
-          :style="`transition-delay:${100 * key}ms`"
+          :key="`nav-mobile-item-${item.id}`"
         >
-          <a
-            href="#_"
-            class="block w-full py-9 text-2xl"
+          <li
+            v-if="item.visible"
+            class="border-b border-ble-200 transition"
+            :style="`transition-delay:${100 * key}ms`"
           >
-            {{ item }}
-          </a>
-        </li>
+            <NuxtLink
+              :to="item.pageLink"
+              class="block w-full py-9 text-2xl"
+            >
+              {{ item.pageTitle }}
+            </NuxtLink>
+          </li>
+        </template>
       </TransitionGroup>
     </nav>
   </div>

@@ -10,6 +10,10 @@ const slotContent = 'Mon Bouton'
 
 describe('vButton', () => {
   const wrapper = mount(VButton, {
+    props: {
+      external: true,
+      href: '/carte',
+    },
     slots: {
       default: slotContent,
     },
@@ -24,7 +28,7 @@ describe('vButton', () => {
   })
 
   it('should emit click event', async () => {
-    await wrapper.find('button').trigger('click')
+    await wrapper.find('.c-button').trigger('click')
     expect(wrapper.emitted()).toHaveProperty('click')
   })
 })

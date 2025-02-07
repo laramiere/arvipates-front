@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     '@nuxt/test-utils/module',
     '@nuxt/fonts',
     '@vueuse/nuxt',
+    '@pinia/nuxt',
   ],
   fonts: {
     provider: 'google',
