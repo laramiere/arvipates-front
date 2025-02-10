@@ -45,6 +45,7 @@ const config = useRuntimeConfig()
           <ContentBlockText
             v-if="contentBlockData?.content.length"
             class="c-content-block__content text-base"
+            :center="false"
             :content="contentBlockData.content"
           />
           <div
