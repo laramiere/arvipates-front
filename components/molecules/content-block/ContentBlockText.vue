@@ -1,7 +1,12 @@
 <script lang="ts" setup>
 import type { StrapiRichTextBlock, StrapiRichTextBlockChildren } from '@/interfaces'
 
-defineProps<{ content: StrapiRichTextBlock[] }>()
+withDefaults(defineProps<{
+  content: StrapiRichTextBlock[]
+  center: boolean
+}>(), {
+  center: true,
+})
 
 function generateText(childrens: StrapiRichTextBlockChildren[]): string {
   let paragraphe = ''
@@ -18,7 +23,10 @@ function generateText(childrens: StrapiRichTextBlockChildren[]): string {
 </script>
 
 <template>
-  <div class="m-auto mb-7 text-center laptop:mb-10">
+  <div
+    :class="{ 'text-center': center }"
+    class="m-auto mb-7 laptop:mb-10"
+  >
     <template
       v-for="(item, key) in content"
       :key="`contentBlockText-${key}`"

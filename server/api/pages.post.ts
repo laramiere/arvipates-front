@@ -18,6 +18,9 @@ const getPagesQueryString = function (path: string) {
           'custom.slider': {
             populate: '*',
           },
+          'custom.image-with-text-block': {
+            populate: '*',
+          },
           'timetable.timetable': {
             populate: '*',
           },
@@ -33,7 +36,6 @@ export default defineEventHandler(async (event) => {
     const body = await readBody(event)
     const queryString = getPagesQueryString(body.path)
     const response = await fetch(`http://localhost:1337/api/pages?${queryString}`)
-
     const data = await response.json()
     if (!data.data.length) {
       throw new Error('Page non trouver')
