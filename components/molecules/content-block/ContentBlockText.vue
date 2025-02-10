@@ -18,12 +18,16 @@ function generateText(childrens: StrapiRichTextBlockChildren[]): string {
 </script>
 
 <template>
-  <div class="m-auto mb-7 text-center laptop:mb-10 laptop:max-w-96">
-    <p
+  <div class="m-auto mb-7 text-center laptop:mb-10">
+    <template
       v-for="(item, key) in content"
       :key="`contentBlockText-${key}`"
-      class="text-base"
-      v-html="generateText(item.children)"
-    />
+    >
+      <p
+        v-if="item.children"
+        class="text-base"
+        v-html="generateText(item.children)"
+      />
+    </template>
   </div>
 </template>

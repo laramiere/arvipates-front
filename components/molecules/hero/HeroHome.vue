@@ -49,6 +49,7 @@ onBeforeUnmount(() => {
         {{ title }}
       </h1>
       <ContentBlockText
+        class="laptop:max-w-96"
         :content="content"
       />
       <VButton
