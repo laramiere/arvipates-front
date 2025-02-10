@@ -1,6 +1,5 @@
 import type {
   FooterInterface,
-  GlobalDataResponse,
   HeaderInterface,
 } from '@/interfaces'
 
@@ -40,7 +39,11 @@ const footerQueryString = qs.stringify({
   },
 })
 
-export default defineEventHandler(async (): Promise<GlobalDataResponse> => {
+export default defineEventHandler(async (): Promise<{
+  header: HeaderInterface | null
+  footer: FooterInterface | null
+  error?: string
+}> => {
   try {
     const [header, footer]: [HeaderInterface, FooterInterface] = await Promise.all([
       fetch(`http://localhost:1337/api/header?${headerQueryString}`).then(response => response.json()),

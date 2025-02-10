@@ -1,3 +1,4 @@
+export type StrapiComponentName = 'custom.hero-home' | 'timetable.timetable'
 export interface StrapiBaseInterface {
   createdAt: string
   documentId: string
@@ -6,6 +7,10 @@ export interface StrapiBaseInterface {
   updatedAt: string
 }
 
+export interface StrapiComponentBaseInterface {
+  __component: StrapiComponentName
+  id: number
+}
 export interface StrapiAddressInterface extends StrapiBaseInterface {
   title: string
   street: string
@@ -15,7 +20,6 @@ export interface StrapiAddressInterface extends StrapiBaseInterface {
   lng: number
   href: string
 }
-
 export interface StrapiNavigationItemInterface extends StrapiBaseInterface {
   pageTitle: string
   pageLink: string

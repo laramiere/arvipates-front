@@ -9,6 +9,11 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: 'http://localhost:1337',
+    },
+  },
   components: [
     {
       path: '~/components',
