@@ -1,12 +1,13 @@
 <script lang="ts" setup>
-import type { ContentBlockInterface } from '@/shared/interfaces/index'
+import type { ContentBlockInterface } from '@/interfaces'
 
-const props = withDefaults(defineProps<{
+withDefaults(defineProps<{
   contentBlockData: ContentBlockInterface
   fullStyle?: boolean
 }>(), {
   fullStyle: true,
 })
+const config = useRuntimeConfig()
 </script>
 
 <template>
@@ -24,41 +25,46 @@ const props = withDefaults(defineProps<{
           :class="{ 'm-auto mb-0 max-w-[24.375rem]': fullStyle }"
           class=" mb-6 w-full font-serif font-bold uppercase tablet:mb-12 tablet:w-auto tablet:text-2xl"
         >
-          {{ props.contentBlockData.title }}
+          {{ contentBlockData.title }}
         </h2>
         <div
           :class="{ 'flex grid-cols-content-block flex-col items-center tablet:grid': fullStyle }"
           class="c-content-block__main mb-6 tablet:mb-[3.75rem]"
         >
           <div
-            v-if="props.contentBlockData.mediaLeft"
+            v-if="contentBlockData.pictureLeft"
             class="c-content-block__media -rotate-90 content-start justify-start tablet:flex tablet:rotate-0"
           >
             <img
               class="block size-auto"
-              :src="props.contentBlockData.mediaLeft.file.url"
+              :src="`${config.public.apiBaseUrl}${contentBlockData.pictureLeft.url}`"
               alt=""
               loading="lazy"
             >
           </div>
-          <div
+          <ContentBlockText
+            v-if="contentBlockData?.content.length"
             class="c-content-block__content text-base"
-            v-html="props.contentBlockData.content"
+            :content="contentBlockData.content"
           />
           <div
-            v-if="props.contentBlockData.mediaRight"
+            v-if="contentBlockData.pictureRight"
             class="c-content-block__media hidden content-end justify-end tablet:flex"
           >
             <img
               class="block size-auto"
-              :src="props.contentBlockData.mediaRight.file.url"
+              :src="`${config.public.apiBaseUrl}${contentBlockData.pictureRight.url}`"
               alt=""
               loading="lazy"
             >
           </div>
         </div>
-        <VButton>
-          {{ props.contentBlockData.cta }}
+        <VButton
+          v-if="contentBlockData.cta"
+          :external="contentBlockData.cta.external"
+          :href="contentBlockData.cta.href"
+        >
+          {{ contentBlockData.cta.title }}
         </VButton>
       </div>
     </div>

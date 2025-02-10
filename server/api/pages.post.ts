@@ -15,6 +15,9 @@ const getPagesQueryString = function (path: string) {
           'custom.hero-home': {
             populate: '*',
           },
+          'custom.slider': {
+            populate: '*',
+          },
           'timetable.timetable': {
             populate: '*',
           },
@@ -32,7 +35,6 @@ export default defineEventHandler(async (event) => {
     const response = await fetch(`http://localhost:1337/api/pages?${queryString}`)
 
     const data = await response.json()
-
     if (!data.data.length) {
       throw new Error('Page non trouver')
     }

@@ -6,11 +6,11 @@ import {
   imageWithTextData,
   InstaData,
   PoiData,
-  sliderData,
 } from '@/shared/fakeData'
 
 const HeroHome = resolveComponent('HeroHome')
 const TimeTable = resolveComponent('Timetable')
+const Slider = resolveComponent('Slider')
 
 const route = useRoute()
 const getComponent = function (name: string) {
@@ -19,6 +19,8 @@ const getComponent = function (name: string) {
       return HeroHome
     case ComponentName.Timetable:
       return TimeTable
+    case ComponentName.Slider:
+      return Slider
   }
 }
 const { data } = await useAsyncData<GlobalPageDataResponse>('homePage', async () => {
@@ -39,9 +41,6 @@ const { data } = await useAsyncData<GlobalPageDataResponse>('homePage', async ()
       v-for="item in data?.data[0].dynamicZone"
       :key="item.id"
       v-bind="{ ...item }"
-    />
-    <Slider
-      :slider-data="sliderData"
     />
     <ImageWithTextBlock :image-with-text-data="imageWithTextData" />
     <ContentBlockCardWithBg :content-block-card-data="contentBlockCardWithBgData" />
