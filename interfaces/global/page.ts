@@ -3,6 +3,7 @@ import type {
   HeroHomeComponentInterface,
   ImageWithTextBlock,
   MapInterface,
+  SeoBlockInterface,
   SliderInterface,
   StrapiBaseInterface,
   StrapiNavigationItemInterface,
@@ -15,4 +16,5 @@ export interface PageInterface extends StrapiBaseInterface {
   dynamicZone: dynamicZoneType[]
   title: string
   navigation_item: StrapiNavigationItemInterface
+  seo: SeoBlockInterface
 }

@@ -39,6 +39,12 @@ const { data } = await useAsyncData<GlobalPageDataResponse>(`${route.params.slug
   })
   return response
 })
+useSeoMeta({
+  title: data.value?.data[0].seo ? `${data.value?.data[0].seo.title} - Arvipâtes` : 'Arvipâtes',
+  description: data.value?.data[0].seo ? data.value?.data[0].seo.description : 'Arvipâtes',
+  ogTitle: data.value?.data[0].seo ? `${data.value?.data[0].seo.title} - Arvipâtes` : 'Arvipâtes',
+  ogDescription: data.value?.data[0].seo ? data.value?.data[0].seo.description : 'Arvipâtes',
+})
 </script>
 
 <template>
