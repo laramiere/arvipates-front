@@ -44,10 +44,11 @@ export default defineEventHandler(async (): Promise<{
   footer: FooterInterface | null
   error?: string
 }> => {
+  const config = useRuntimeConfig()
   try {
     const [header, footer]: [HeaderInterface, FooterInterface] = await Promise.all([
-      fetch(`http://localhost:1337/api/header?${headerQueryString}`).then(response => response.json()),
-      fetch(`http://localhost:1337/api/footer?${footerQueryString}`).then(response => response.json()),
+      fetch(`${config.public.apiBaseUrl}/api/header?${headerQueryString}`).then(response => response.json()),
+      fetch(`${config.public.apiBaseUrl}/api/footer?${footerQueryString}`).then(response => response.json()),
     ])
 
     return {
