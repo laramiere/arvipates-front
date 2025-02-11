@@ -11,6 +11,9 @@ const getPagesQueryString = function (path: string) {
       },
     },
     populate: {
+      seo: {
+        populate: '*',
+      },
       dynamicZone: {
         on: {
           [ComponentName.HeroHome]: {

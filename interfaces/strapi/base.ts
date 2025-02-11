@@ -41,3 +41,9 @@ export interface StrapiSocialLinkInterface {
   title: string
   cta: StrapiCtaInterface[]
 }
+
+export interface SeoBlockInterface extends StrapiComponentBaseInterface {
+  title: string
+  description: string
+  ogImage?: string
+}
