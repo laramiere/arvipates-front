@@ -1,23 +1,27 @@
 <script lang="ts" setup>
-import type { PoiInterface } from '@/shared/interfaces'
+import type { MapInterface, StrapiAddressInterface } from '@/interfaces'
 import 'leaflet/dist/leaflet.css'
 import '@/assets/scss/_leaflet.scss'
 
-const props = defineProps<{ poi: PoiInterface }>()
+const props = defineProps<MapInterface>()
 const map = ref(null)
 
 onMounted(async () => {
   try {
     const L = (await import('leaflet')).default
 
-    function generateDivIcon(icon: PoiInterface) {
+    function generateDivIcon(address: StrapiAddressInterface) {
       return L.divIcon({
         html: `
       <a
-      class="flex flex-col items-center font-serif  font-bold text-black-400 no-underline"
-      href="${icon.link}">
-        <img src="${icon.picture.file.url}" />
-        <span class="leading-none block mt-[10px] text-2xl uppercase text-black-400">${icon.title}</span>
+        class="flex flex-col items-center font-serif  font-bold text-black-400 no-underline"
+        href="${address.href}"
+        target="_blank"
+      >
+        <img src="images/pin.png" />
+        <span class="leading-none block mt-[10px] text-2xl uppercase text-black-400">
+          ${address.title}
+        </span>
       </a>
       `,
         iconSize: [72, 72],
@@ -28,12 +32,12 @@ onMounted(async () => {
     map.value = L.map('map', {
       zoomControl: false,
       scrollWheelZoom: false,
-    }).setView(props.poi.latlng, 16)
+    }).setView([props.address.lat, props.address.lng], 16)
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map.value)
-    L.marker(props.poi.latlng, {
-      icon: generateDivIcon(props.poi),
+    L.marker([props.address.lat, props.address.lng], {
+      icon: generateDivIcon(props.address),
     }).addTo(map.value)
   }
   catch (error) {
@@ -49,7 +53,7 @@ onMounted(async () => {
     class="card relative z-0 w-full overflow-hidden rounded-t-global"
   >
     <h2 id="map-title" class="sr-only">
-      Carte interactive
+      {{ props.title }}
     </h2>
     <div id="map" class="w-full pt-[121.555%] tablet:pt-[33.69%]">
       <p class="sr-only">

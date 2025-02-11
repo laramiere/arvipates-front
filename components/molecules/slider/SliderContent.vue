@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { Picture } from '@/shared/interfaces'
+import type { StrapiPictureInterface } from '@/interfaces'
 
 const props = defineProps<{
-  items: Picture[]
+  items: StrapiPictureInterface[]
 }>()
-
+const config = useRuntimeConfig()
 const slider = ref(null)
 /*
 const isVisible = useElementVisibility(slider)
@@ -42,8 +42,8 @@ const translateValue = computed(() => {
                 <img
                   class="loaded size-full object-cover"
                   loading="lazy"
-                  :src="item.file.url"
-                  :alt="item.file.alternativeText"
+                  :src="`${config.public.apiBaseUrl}${item.url}`"
+                  :alt="item.alternativeText"
                 >
               </div>
             </div>

@@ -9,6 +9,11 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: 'http://localhost:1337',
+    },
+  },
   components: [
     {
       path: '~/components',
@@ -20,6 +25,7 @@ export default defineNuxtConfig({
     '@nuxt/test-utils/module',
     '@nuxt/fonts',
     '@vueuse/nuxt',
+    '@pinia/nuxt',
   ],
   fonts: {
     provider: 'google',

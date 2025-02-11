@@ -1,5 +1,5 @@
+import type { TimetableInterface } from '@/interfaces'
 import type { VueWrapper } from '@vue/test-utils'
-import { timetableData } from '@/shared/fakeData'
 import { mount } from '@vue/test-utils'
 import {
   afterEach,
@@ -11,6 +11,25 @@ import {
 } from 'vitest'
 import Timetable from './Timetable.vue'
 
+const timeTableData: TimetableInterface = {
+  id: 1,
+  __component: 'timetable.timetable',
+  title: 'my timetable',
+  times: [
+    {
+      id: 1,
+      timeslot1: 'toto1',
+      timeslot2: 'toto2',
+      title: 'Lun',
+    },
+    {
+      id: 2,
+      timeslot1: 'toto1',
+      timeslot2: 'toto2',
+      title: 'Mar',
+    },
+  ],
+}
 describe('timetable', () => {
   let wrapper: VueWrapper<any>
   beforeEach(() => {
@@ -19,7 +38,7 @@ describe('timetable', () => {
     vi.setSystemTime(monday)
     wrapper = mount(Timetable, {
       props: {
-        timetable: timetableData,
+        ...timeTableData,
       },
     })
   })
