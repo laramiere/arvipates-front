@@ -8,6 +8,7 @@ module.exports = {
       script: '.output/server/index.mjs',
       env: {
         NODE_ENV: 'production',
+        NUXT_PUBLIC_API_BASE_URL: 'https://api.arvipates.fr',
       },
     },
   ],

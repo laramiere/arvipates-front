@@ -51,6 +51,8 @@ export default defineEventHandler(async (event) => {
     const queryString = getPagesQueryString(body.path)
     const response = await fetch(`${config.public.apiBaseUrl}/api/pages?${queryString}`)
     const data = await response.json()
+    // eslint-disable-next-line no-console
+    console.log('data', data)
 
     if (!data.data.length) {
       throw new Error('Page non trouver')
