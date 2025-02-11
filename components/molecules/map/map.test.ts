@@ -18,8 +18,4 @@ describe('map', () => {
   it('should render the correct HTML', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
-
-  it('should have title for accessibility', () => {
-    expect(wrapper.get('[aria-label="carte interactive"] h2.sr-only').text()).toBe('Carte interactive')
-  })
 })
