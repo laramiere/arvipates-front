@@ -50,6 +50,7 @@ onBeforeUnmount(() => {
       </h1>
       <ContentBlockText
         class="laptop:max-w-96"
+        :center="true"
         :content="content"
       />
       <VButton

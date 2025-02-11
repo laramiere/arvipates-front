@@ -1,23 +1,30 @@
 <script lang="ts" setup>
-import type { ContentBlockInterface } from '@/shared/interfaces'
+import type { ContentBlockInterface } from '@/interfaces'
 
-const props = defineProps<{
+defineProps<{
   content: ContentBlockInterface
 }>()
 </script>
 
 <template>
   <div class="c-content-block-card rounded-global bg-flickerW p-3">
-    <div class="rounded-global border border-black-200 px-8 py-9 tablet:px-11 tablet:py-14">
+    <div class="flex flex-col items-center rounded-global border border-black-200 px-8 py-9 tablet:px-11 tablet:py-14">
       <h2 class="mb-6 text-center font-serif font-bold uppercase tablet:mb-10 tablet:text-2xl">
-        {{ props.content.title }}
+        {{ content.title }}
       </h2>
-      <div
-        class="c-content-block-card__content mb-6 border-y border-black-200 py-6 text-left tablet:mb-10 tablet:py-10"
-        v-html="props.content.content"
+
+      <ContentBlockText
+        :center="false"
+        class="c-content-block-card_laptop:max-w-96_content mb-6 border-y border-black-200 py-6 text-left tablet:mb-10 tablet:py-10"
+        :content="content.content"
       />
-      <VButton class="mx-auto block">
-        {{ props.content.cta }}
+      <VButton
+        v-if="content.cta"
+        :href="content.cta.href"
+        :external="content.cta.external"
+        class="mx-auto inline-block"
+      >
+        {{ content.cta.title }}
       </VButton>
     </div>
   </div>

@@ -1,3 +1,4 @@
+import { ComponentName } from '@/interfaces'
 import qs from 'qs'
 
 const getPagesQueryString = function (path: string) {
@@ -12,16 +13,19 @@ const getPagesQueryString = function (path: string) {
     populate: {
       dynamicZone: {
         on: {
-          'custom.hero-home': {
+          [ComponentName.HeroHome]: {
             populate: '*',
           },
-          'custom.slider': {
+          [ComponentName.Slider]: {
             populate: '*',
           },
-          'custom.image-with-text-block': {
+          [ComponentName.ImageWithTextBlock]: {
             populate: '*',
           },
-          'timetable.timetable': {
+          [ComponentName.ContentBlockCardWithBg]: {
+            populate: '*',
+          },
+          [ComponentName.Timetable]: {
             populate: '*',
           },
         },
@@ -37,6 +41,7 @@ export default defineEventHandler(async (event) => {
     const queryString = getPagesQueryString(body.path)
     const response = await fetch(`http://localhost:1337/api/pages?${queryString}`)
     const data = await response.json()
+
     if (!data.data.length) {
       throw new Error('Page non trouver')
     }
