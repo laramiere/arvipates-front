@@ -30,7 +30,7 @@ const getComponent = function (name: string) {
       return PictureWall
   }
 }
-const { data } = await useAsyncData<GlobalPageDataResponse>('homePage', async () => {
+const { data } = await useAsyncData<GlobalPageDataResponse>(`${route.params.slug}`, async () => {
   const response = await $fetch('/api/pages', {
     method: 'POST',
     body: {
