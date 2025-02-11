@@ -35,4 +35,39 @@ export default defineNuxtConfig({
       standalone: false,
     },
   },
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'manifest',
+          href: '/favicon/site.webmanifest',
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/favicon/favicon-96x96.png',
+          sizes: '96x96',
+        },
+        {
+          rel: 'shortcut icon',
+          href: '/favicon/favicon.ico',
+          sizes: '96x96',
+        },
+        {
+          rel: 'apple-touch-icon',
+          type: 'image/png',
+          href: '/favicon/apple-touch-icon.png',
+          sizes: '180x180',
+        },
+        {
+          rel: 'icon',
+          type: 'image/svg+xml',
+          href: '/favicon/favicon.svg',
+        },
+      ],
+      htmlAttrs: {
+        lang: 'fr',
+      },
+    },
+  },
 })
