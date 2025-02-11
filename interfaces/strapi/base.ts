@@ -1,4 +1,6 @@
-export type StrapiComponentName = 'custom.hero-home' | 'timetable.timetable'
+import type { ComponentNameType } from '@/interfaces'
+
+export type StrapiComponentName = ComponentNameType
 export interface StrapiBaseInterface {
   createdAt: string
   documentId: string

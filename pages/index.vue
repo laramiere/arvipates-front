@@ -1,9 +1,6 @@
 <script lang="ts" setup>
 import type { GlobalPageDataResponse } from '@/interfaces'
 import { ComponentName } from '@/interfaces'
-import {
-  InstaData,
-} from '@/shared/fakeData'
 
 const HeroHome = resolveComponent('HeroHome')
 const TimeTable = resolveComponent('Timetable')
@@ -11,6 +8,8 @@ const Slider = resolveComponent('Slider')
 const ImageWithTextBlock = resolveComponent('ImageWithTextBlock')
 const ContentBlockCardWithBg = resolveComponent('ContentBlockCardWithBg')
 const Map = resolveComponent('Map')
+const PictureWall = resolveComponent('PictureWall')
+
 const route = useRoute()
 
 const getComponent = function (name: string) {
@@ -27,6 +26,8 @@ const getComponent = function (name: string) {
       return ContentBlockCardWithBg
     case ComponentName.Map:
       return Map
+    case ComponentName.PictureWall:
+      return PictureWall
   }
 }
 const { data } = await useAsyncData<GlobalPageDataResponse>('homePage', async () => {
@@ -48,6 +49,5 @@ const { data } = await useAsyncData<GlobalPageDataResponse>('homePage', async ()
       :key="item.id"
       v-bind="{ ...item }"
     />
-    <Insta :insta-data="InstaData" />
   </div>
 </template>
