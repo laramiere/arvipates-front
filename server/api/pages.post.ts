@@ -28,6 +28,9 @@ const getPagesQueryString = function (path: string) {
           [ComponentName.Timetable]: {
             populate: '*',
           },
+          [ComponentName.Map]: {
+            populate: '*',
+          },
         },
       },
     },

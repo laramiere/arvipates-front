@@ -1,6 +1,7 @@
 export * from './ContentBlock.interface'
 export * from './HeroHome.interface'
 export * from './ImageWithTextBlock'
+export * from './Map.interface'
 export * from './Slider.interface'
 export * from './Timetable.interface'
 export * from './TopBar.interfaces'
