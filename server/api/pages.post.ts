@@ -45,10 +45,11 @@ const getPagesQueryString = function (path: string) {
   })
 }
 export default defineEventHandler(async (event) => {
+  const config = useRuntimeConfig()
   try {
     const body = await readBody(event)
     const queryString = getPagesQueryString(body.path)
-    const response = await fetch(`http://localhost:1337/api/pages?${queryString}`)
+    const response = await fetch(`${config.public.apiBaseUrl}/api/pages?${queryString}`)
     const data = await response.json()
 
     if (!data.data.length) {
