@@ -31,6 +31,9 @@ const getPagesQueryString = function (path: string) {
           [ComponentName.Map]: {
             populate: '*',
           },
+          [ComponentName.PictureWall]: {
+            populate: '*',
+          },
         },
       },
     },
