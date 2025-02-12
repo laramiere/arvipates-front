@@ -40,11 +40,12 @@ function handleScrollTop() {
           </span>
         </button>
         <SocialLink
+          v-if="footer.SocialLink"
           :social="footer.SocialLink"
         />
       </div>
       <nav
-        v-if="footer.navigation_items.length"
+        v-if="footer.navigation_items && footer.navigation_items.length"
         class="c-footer__nav border-t border-t-black-100 pt-6"
       >
         <ul class="justify-center text-center tablet:flex">

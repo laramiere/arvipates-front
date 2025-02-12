@@ -2,5 +2,5 @@ import type { StrapiAddressInterface, StrapiComponentBaseInterface } from '@/int
 
 export interface MapInterface extends StrapiComponentBaseInterface {
   title: string
-  address: StrapiAddressInterface
+  address?: StrapiAddressInterface
 }

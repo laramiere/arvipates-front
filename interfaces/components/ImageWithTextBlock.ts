@@ -10,5 +10,5 @@ export interface ImageWithTextBlock extends StrapiComponentBaseInterface {
   content: StrapiRichTextBlock[]
   picture1: StrapiPictureInterface
   picture2: StrapiPictureInterface
-  cta: StrapiCtaInterface
+  cta?: StrapiCtaInterface
 }
