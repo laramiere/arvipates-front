@@ -4,12 +4,24 @@ import { onBeforeUnmount, onMounted } from 'vue'
 
 defineProps<HeroHomeComponentInterface>()
 const heroContent = ref<HTMLElement | null>(null)
+const hero = ref<HTMLElement | null>(null)
 const height = ref<number>(0)
 const timeoutRef = ref<ReturnType<typeof setTimeout> | null>(null)
 const loaded = ref(false)
 const config = useRuntimeConfig()
 
 let setTimeoutDuration = 0
+
+function handleScroll() {
+  if (!hero.value) {
+    return
+  }
+
+  window.scrollTo({
+    top: hero.value.scrollHeight,
+    behavior: 'smooth',
+  })
+}
 function calculatHeight() {
   if (heroContent.value) {
     if (timeoutRef.value) {
@@ -40,7 +52,10 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="c-hero relative overflow-hidden pt-20 laptop:pt-[18.75rem]">
+  <div
+    ref="hero"
+    class="c-hero relative overflow-hidden pt-20 laptop:pt-[18.75rem]"
+  >
     <div
       ref="heroContent"
       class="c-hero__content relative z-30 flex flex-col items-center justify-center px-[1.5625rem] laptop:absolute laptop:left-1/2 laptop:top-32 laptop:-translate-x-1/2"
@@ -54,13 +69,19 @@ onBeforeUnmount(() => {
         :content="content"
       />
       <VButton
+        v-if="cta"
         :href="cta.href"
         :external="cta.external"
         class="w-auto"
       >
         {{ cta.title }}
       </VButton>
-      <ScrollButton class="scroll absolute left-1/2 flex -translate-x-1/2 laptop:hidden" />
+      <CustomScrollButton
+        class="scroll absolute left-1/2 flex -translate-x-1/2 laptop:hidden"
+        @handle-scroll-down="handleScroll"
+      >
+        Défiler vers le basss
+      </CustomScrollButton>
     </div>
     <picture>
       <source
@@ -87,15 +108,23 @@ onBeforeUnmount(() => {
           :alt="`${config.public.apiBaseUrl}${pictureLeft.alternativeText}`"
         >
       </div>
-      <div class="absolute right-[-12px] top-[-16px] w-[110px] laptop:top-[30px] laptop:w-auto">
+      <div
+        v-if="pictureRight"
+        class="absolute right-[-12px] top-[-16px] w-[110px] laptop:top-[30px] laptop:w-auto"
+      >
         <img
           :src="`${config.public.apiBaseUrl}${pictureRight.url}`"
-          :alt="`${config.public.apiBaseUrl}${pictureLeft.alternativeText}`"
+          :alt="`${config.public.apiBaseUrl}${pictureRight.alternativeText}`"
         >
       </div>
     </div>
     <div class="c-hero__cta container-xl container absolute left-1/2 z-20 mx-auto flex -translate-x-1/2 justify-end">
-      <ScrollButton class="hidden laptop:flex" />
+      <CustomScrollButton
+        class="hidden laptop:flex"
+        @handle-scroll-down="handleScroll"
+      >
+        Défiler vers le basss
+      </CustomScrollButton>
     </div>
   </div>
 </template>

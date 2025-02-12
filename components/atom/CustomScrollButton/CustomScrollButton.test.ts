@@ -4,12 +4,12 @@ import {
   expect,
   it,
 } from 'vitest'
-import ScrollButton from './ScrollButton.vue'
+import CustomScrollButton from './CustomScrollButton.vue'
 
-const eventNameEmittedByClickedButton = 'clickOnScrollBtn'
+const eventNameEmittedByClickedButton = 'handleScrollDown'
 
 describe('scrollButton', () => {
-  const wrapper = mount(ScrollButton)
+  const wrapper = mount(CustomScrollButton)
 
   it('should render the correct HTML', () => {
     expect(wrapper.html()).toMatchSnapshot()

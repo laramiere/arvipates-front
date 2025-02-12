@@ -40,6 +40,7 @@ function handleScrollTop() {
           </span>
         </button>
         <SocialLink
+          v-if="footer.SocialLink"
           :social="footer.SocialLink"
         />
       </div>

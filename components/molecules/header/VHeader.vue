@@ -71,7 +71,7 @@ const mobileNavigationItems: Ref<StrapiNavigationItemInterface[]> = computed(() 
           >
             <li class="[&:not(:last-child)]:mr-6">
               <VButton
-                v-if="header?.bookCta.visible"
+                v-if="header?.bookCta && header?.bookCta.visible"
                 :href="header.bookCta.href"
                 :external="header.bookCta.external"
                 class="mr-2 flex h-12 items-center"
@@ -82,7 +82,7 @@ const mobileNavigationItems: Ref<StrapiNavigationItemInterface[]> = computed(() 
           </VHeaderNav>
           <div class=" flex w-full items-center justify-end laptop:hidden">
             <VButton
-              v-if="header?.bookCta.visible"
+              v-if="header?.bookCta && header?.bookCta.visible"
               :href="header.bookCta.href"
               :external="header.bookCta.external"
               class="mr-2 flex h-12 items-center"

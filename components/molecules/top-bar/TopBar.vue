@@ -6,10 +6,10 @@ const props = defineProps<{
   topBar: TopBarInterface
 }>()
 const activeSocialCta = computed(() => {
-  return props.topBar.SocialLink.cta.filter(item => item.visible)
+  return props.topBar.SocialLink?.cta.filter(item => item.visible)
 })
 const getAddress = computed(() => {
-  return `${props.topBar.address.street} - ${props.topBar.address.zipcode} ${props.topBar.address.city.toUpperCase()}`
+  return `${props.topBar?.address?.street} - ${props.topBar?.address?.zipcode} ${props.topBar?.address?.city.toUpperCase()}`
 })
 </script>
 
@@ -37,7 +37,7 @@ const getAddress = computed(() => {
       </div>
       <div class="c-top-bar__info">
         <a
-          v-if="props.topBar.address.href"
+          v-if="props.topBar?.address?.href"
           class="text-black-100"
           target="_blank"
           aria-label="Visualisez itinéraire dans un nouvel onglet"

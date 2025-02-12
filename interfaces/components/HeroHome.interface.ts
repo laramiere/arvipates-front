@@ -10,7 +10,7 @@ export interface HeroHomeComponentInterface extends StrapiComponentBaseInterface
   content: StrapiRichTextBlock[]
   pictureDesktop: StrapiPictureInterface
   pictureMobile: StrapiPictureInterface
-  pictureLeft: StrapiPictureInterface
-  pictureRight: StrapiPictureInterface
-  cta: StrapiCtaInterface
+  pictureLeft?: StrapiPictureInterface
+  pictureRight?: StrapiPictureInterface
+  cta?: StrapiCtaInterface
 }
