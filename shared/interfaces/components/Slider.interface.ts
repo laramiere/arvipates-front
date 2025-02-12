@@ -3,5 +3,5 @@ import type { Picture } from './GlobalComponent.interface'
 
 export interface SliderInterface {
   content: ContentBlockInterface
-  slides: Picture[]
+  slides?: Picture[]
 }

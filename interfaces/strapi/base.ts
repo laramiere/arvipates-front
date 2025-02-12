@@ -38,7 +38,7 @@ export interface StrapiCtaInterface {
 }
 export interface StrapiSocialLinkInterface {
   id: number
-  title: string
+  title?: string
   cta: StrapiCtaInterface[]
 }
 

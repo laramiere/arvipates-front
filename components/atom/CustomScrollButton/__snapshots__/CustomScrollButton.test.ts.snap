@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`scrollButton > should render the correct HTML 1`] = `"<button data-v-4dcbc01f="" class="c-scroll z-10 flex flex-col items-center text-ble-300" aria-label="scroll down button"><span data-v-4dcbc01f="" class="relative mb-2 block rounded-2xl border border-ble-300"><span data-v-4dcbc01f="" class="absolute left-1/2 top-2 block -translate-x-1/2 rounded-full bg-ble-300"></span></span></button>"`;

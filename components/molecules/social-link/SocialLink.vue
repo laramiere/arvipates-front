@@ -10,7 +10,10 @@ const props = defineProps<{
   <div
     class="c-social-link"
   >
-    <p class="mb-3 max-w-[11.45rem] text-center text-base uppercase text-black-100 tablet:text-left">
+    <p
+      v-if="props.social.title"
+      class="mb-3 max-w-[11.45rem] text-center text-base uppercase text-black-100 tablet:text-left"
+    >
       {{ props.social.title }}
     </p>
     <nav>

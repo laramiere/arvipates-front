@@ -17,10 +17,11 @@ async function setDisplayHeaderMenuMobile() {
   }
   displayHeaderMenuMobile.value = !displayHeaderMenuMobile.value
 }
-const mobileNavigationItems: StrapiNavigationItemInterface[] = computed(() => {
-  const navLeft = header.value?.navLeft.navigation_items
-  const navRight = header.value?.navRight.navigation_items
-  const mergedArray = []
+const mobileNavigationItems: Ref<StrapiNavigationItemInterface[]> = computed(() => {
+  const navLeft = header.value?.navLeft?.navigation_items
+  const navRight = header.value?.navRight?.navigation_items
+  const mergedArray: StrapiNavigationItemInterface[] = []
+
   if (navLeft) {
     mergedArray.push(...navLeft)
   }
@@ -51,8 +52,9 @@ const mobileNavigationItems: StrapiNavigationItemInterface[] = computed(() => {
       <div class="container-xl container mx-auto">
         <div class="relative flex items-center justify-between border-b border-ble-200 px-[1.5625rem] py-2 desktop:px-0">
           <VHeaderNav
-            v-if="header?.navLeft.navigation_items.length"
+            v-if="header.navLeft && header?.navLeft.navigation_items.length"
             class="justify-start pr-12"
+            :class="{ 'w-full': !header.navRight }"
             :navigation-items="header?.navLeft.navigation_items"
           />
           <NuxtLink
@@ -62,13 +64,14 @@ const mobileNavigationItems: StrapiNavigationItemInterface[] = computed(() => {
             <img src="/arvipates.png" alt="Retour Accueil Arvipates">
           </NuxtLink>
           <VHeaderNav
-            v-if="header?.navRight.navigation_items.length"
+            v-if="header.navRight && header?.navRight.navigation_items.length"
             class="justify-end pl-12"
+            :class="{ 'w-full': !header.navLeft }"
             :navigation-items="header?.navRight.navigation_items"
           >
             <li class="[&:not(:last-child)]:mr-6">
               <VButton
-                v-if="header?.bookCta.visible"
+                v-if="header?.bookCta && header?.bookCta.visible"
                 :href="header.bookCta.href"
                 :external="header.bookCta.external"
                 class="mr-2 flex h-12 items-center"
@@ -79,7 +82,7 @@ const mobileNavigationItems: StrapiNavigationItemInterface[] = computed(() => {
           </VHeaderNav>
           <div class=" flex w-full items-center justify-end laptop:hidden">
             <VButton
-              v-if="header?.bookCta.visible"
+              v-if="header?.bookCta && header?.bookCta.visible"
               :href="header.bookCta.href"
               :external="header.bookCta.external"
               class="mr-2 flex h-12 items-center"

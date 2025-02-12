@@ -7,6 +7,9 @@ const props = defineProps<MapInterface>()
 const map = ref(null)
 
 onMounted(async () => {
+  if (!props.address) {
+    return
+  }
   try {
     const L = (await import('leaflet')).default
 
