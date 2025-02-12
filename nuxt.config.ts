@@ -1,4 +1,5 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import qs from 'qs'
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: {
@@ -17,7 +18,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBaseUrl: 'http://localhost:1337',
+      apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || 'http://localhost:1337',
+      seoSiteUrl: process.env.NUXT_PUBLIC_SEO_SITE_URL || 'http://localhost:3000',
     },
   },
   components: [
@@ -32,6 +34,9 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@vueuse/nuxt',
     '@pinia/nuxt',
+    'nuxt-site-config',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
   ],
   fonts: {
     provider: 'google',
@@ -39,6 +44,29 @@ export default defineNuxtConfig({
   eslint: {
     config: {
       standalone: false,
+    },
+  },
+  sitemap: {
+    urls: async (): Promise<string[]> => {
+      const query = qs.stringify({
+        populate: {
+          navigation_items: {
+            populate: '*',
+          },
+        },
+      }, {
+        encodeValuesOnly: true,
+      })
+      const response = await fetch(`${process.env.NUXT_PUBLIC_API_BASE_URL}/api/sitemap?${query}`)
+      const data = await response.json()
+      if (!data.data.navigation_items) {
+        return ['/']
+      }
+      const urls = data.data.navigation_items.reduce((acc, item) => {
+        acc.push(item.pageLink)
+        return acc
+      }, [])
+      return urls
     },
   },
   app: {
@@ -75,5 +103,9 @@ export default defineNuxtConfig({
         lang: 'fr',
       },
     },
+  },
+  site: {
+    url: process.env.NUXT_PUBLIC_SEO_SITE_URL || 'https://arvipates.fr',
+    name: process.env.NUXT_PUBLIC_SEO_NAME || 'Arvipâtes',
   },
 })

@@ -17,6 +17,13 @@ export default withNuxt(
       'tailwindcss/no-custom-classname': 'off',
     },
   },
+  {
+    files: ['nuxt.config.ts'],
+    rules: {
+      'node/no-process-env': 'off',
+      'node/prefer-global/process': 'off',
+    },
+  },
 )
 
 // export default antfu({
