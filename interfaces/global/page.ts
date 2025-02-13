@@ -1,6 +1,8 @@
 import type {
+  CardInterface,
   ContentBlockCardWithBg,
   HeroHomeComponentInterface,
+  HeroInterface,
   ImageWithTextBlock,
   MapInterface,
   SeoBlockInterface,
@@ -10,7 +12,7 @@ import type {
   TimetableInterface,
 } from '@/interfaces'
 
-export type dynamicZoneType = HeroHomeComponentInterface | TimetableInterface | SliderInterface | ImageWithTextBlock | ContentBlockCardWithBg | MapInterface
+export type dynamicZoneType = CardInterface | HeroInterface | HeroHomeComponentInterface | TimetableInterface | SliderInterface | ImageWithTextBlock | ContentBlockCardWithBg | MapInterface
 
 export interface PageInterface extends StrapiBaseInterface {
   dynamicZone: dynamicZoneType[]

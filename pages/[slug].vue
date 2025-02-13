@@ -2,6 +2,7 @@
 import type { GlobalPageDataResponse } from '@/interfaces'
 import { ComponentName } from '@/interfaces'
 
+const Hero = resolveComponent('Hero')
 const HeroHome = resolveComponent('HeroHome')
 const TimeTable = resolveComponent('Timetable')
 const Slider = resolveComponent('Slider')
@@ -9,11 +10,13 @@ const ImageWithTextBlock = resolveComponent('ImageWithTextBlock')
 const ContentBlockCardWithBg = resolveComponent('ContentBlockCardWithBg')
 const Map = resolveComponent('Map')
 const PictureWall = resolveComponent('PictureWall')
-
+const Card = resolveComponent('Card')
 const route = useRoute()
 
 const getComponent = function (name: string) {
   switch (name) {
+    case ComponentName.Hero:
+      return Hero
     case ComponentName.HeroHome:
       return HeroHome
     case ComponentName.Timetable:
@@ -28,6 +31,8 @@ const getComponent = function (name: string) {
       return Map
     case ComponentName.PictureWall:
       return PictureWall
+    case ComponentName.Card:
+      return Card
   }
 }
 const { data } = await useAsyncData<GlobalPageDataResponse>(`${route.params.slug}`, async () => {

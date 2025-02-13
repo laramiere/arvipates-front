@@ -19,6 +19,24 @@ const getPagesQueryString = function (path: string) {
       },
       dynamicZone: {
         on: {
+          [ComponentName.Card]: {
+            populate: {
+              card: {
+                populate: {
+                  sections: {
+                    populate: {
+                      card_items: {
+                        populate: '*',
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+          [ComponentName.Hero]: {
+            populate: '*',
+          },
           [ComponentName.HeroHome]: {
             populate: '*',
           },

@@ -1,60 +1,20 @@
 <script lang="ts" setup>
 import type { HeroHomeComponentInterface } from '@/interfaces'
-import { onBeforeUnmount, onMounted } from 'vue'
 
 defineProps<HeroHomeComponentInterface>()
-const heroContent = ref<HTMLElement | null>(null)
-const hero = ref<HTMLElement | null>(null)
-const height = ref<number>(0)
-const timeoutRef = ref<ReturnType<typeof setTimeout> | null>(null)
-const loaded = ref(false)
+
 const config = useRuntimeConfig()
 
-let setTimeoutDuration = 0
-
-function handleScroll() {
-  if (!hero.value) {
-    return
-  }
-
-  window.scrollTo({
-    top: hero.value.scrollHeight,
-    behavior: 'smooth',
-  })
-}
-function calculatHeight() {
-  if (heroContent.value) {
-    if (timeoutRef.value) {
-      clearTimeout(timeoutRef.value)
-    }
-    timeoutRef.value = setTimeout(() => {
-      const heroHeight = heroContent.value?.offsetHeight
-      if (setTimeoutDuration === 0) {
-        setTimeoutDuration = 400
-      }
-      if (heroHeight) {
-        height.value = heroHeight + 80
-      }
-    }, setTimeoutDuration)
-  }
-}
-onMounted(async () => {
-  await nextTick()
-  calculatHeight()
-  setTimeout(() => {
-    loaded.value = true
-    window.addEventListener('resize', calculatHeight)
-  }, setTimeoutDuration + 400)
-})
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', calculatHeight)
-})
+const hero = ref<HTMLElement | null>(null)
+const heroContent = ref<HTMLElement | null>(null)
+const { height, loaded } = useHeightGenerator(heroContent)
+const { handleScrollTo } = useScrollTo(hero)
 </script>
 
 <template>
   <div
     ref="hero"
-    class="c-hero relative overflow-hidden pt-20 laptop:pt-[18.75rem]"
+    class="c-hero relative overflow-hidden pt-20 laptop:pt-[20.75rem]"
   >
     <div
       ref="heroContent"
@@ -78,7 +38,7 @@ onBeforeUnmount(() => {
       </VButton>
       <CustomScrollButton
         class="scroll absolute left-1/2 flex -translate-x-1/2 laptop:hidden"
-        @handle-scroll-down="handleScroll"
+        @handle-scroll-down="handleScrollTo"
       >
         Défiler vers le basss
       </CustomScrollButton>
@@ -121,7 +81,7 @@ onBeforeUnmount(() => {
     <div class="c-hero__cta container-xl container absolute left-1/2 z-20 mx-auto flex -translate-x-1/2 justify-end">
       <CustomScrollButton
         class="hidden laptop:flex"
-        @handle-scroll-down="handleScroll"
+        @handle-scroll-down="handleScrollTo"
       >
         Défiler vers le basss
       </CustomScrollButton>
