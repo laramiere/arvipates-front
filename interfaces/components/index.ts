@@ -1,3 +1,4 @@
+export * from './Card.interface'
 export * from './ContentBlock.interface'
 export * from './Hero.interface'
 export * from './HeroHome.interface'
