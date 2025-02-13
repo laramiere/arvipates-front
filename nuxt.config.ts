@@ -58,8 +58,11 @@ export default defineNuxtConfig({
         encodeValuesOnly: true,
       })
       const response = await fetch(`${process.env.NUXT_PUBLIC_API_BASE_URL}/api/sitemap?${query}`)
+      if (!response) {
+        return ['/']
+      }
       const data = await response.json()
-      if (!data.data.navigation_items) {
+      if (!data?.data?.navigation_items) {
         return ['/']
       }
       const urls = data.data.navigation_items.reduce((acc, item) => {

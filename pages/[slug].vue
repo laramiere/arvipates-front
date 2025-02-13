@@ -2,6 +2,7 @@
 import type { GlobalPageDataResponse } from '@/interfaces'
 import { ComponentName } from '@/interfaces'
 
+const Hero = resolveComponent('Hero')
 const HeroHome = resolveComponent('HeroHome')
 const TimeTable = resolveComponent('Timetable')
 const Slider = resolveComponent('Slider')
@@ -14,6 +15,8 @@ const route = useRoute()
 
 const getComponent = function (name: string) {
   switch (name) {
+    case ComponentName.Hero:
+      return Hero
     case ComponentName.HeroHome:
       return HeroHome
     case ComponentName.Timetable:

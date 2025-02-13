@@ -9,7 +9,10 @@ module.exports = {
       env: {
         NODE_ENV: 'production',
         NUXT_SITE_ENV: 'production',
+        NUXT_PUBLIC_SEO_SITE_URL: 'https://arvipates.fr',
+        NUXT_PUBLIC_SEO_NAME: 'arvipates',
         NUXT_PUBLIC_API_BASE_URL: 'https://api.arvipates.fr',
+
       },
     },
   ],
