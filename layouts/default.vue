@@ -35,7 +35,7 @@ const { data } = useAsyncData('globalData', async () => {
 <template>
   <div class="mb-[-2.1875rem] bg-black-100">
     <VHeader v-if="data?.header" />
-    <main class="bg-black-100 pt-[6.625rem] tablet:pt-[7.3125rem] laptop:pt-[9.125rem]">
+    <main class="bg-black-100 pt-[6.625rem] tablet:pt-[6.7125rem] laptop:pt-[7.125rem]">
       <slot />
     </main>
     <VFooter v-if="data?.footer" />

@@ -33,7 +33,7 @@ function generateText(childrens: StrapiRichTextBlockChildren[]): string {
     >
       <p
         v-if="item.children"
-        class="text-base"
+        class="text-xs laptop:text-base"
         v-html="generateText(item.children)"
       />
     </template>
