@@ -5,6 +5,8 @@ import { onMounted } from 'vue'
 const props = defineProps<{
   navigationItems: StrapiNavigationItemInterface[]
 }>()
+defineEmits(['closeMobileMenu'])
+
 const itemToDisplay = ref<StrapiNavigationItemInterface[]>([])
 
 onMounted(() => {
@@ -37,6 +39,7 @@ onMounted(() => {
             <NuxtLink
               :to="item.pageLink"
               class="block w-full py-9 text-2xl"
+              @click="$emit('closeMobileMenu')"
             >
               {{ item.pageTitle }}
             </NuxtLink>
