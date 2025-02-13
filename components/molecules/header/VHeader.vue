@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { StrapiNavigationItemInterface } from '@/interfaces'
+import VButtonBurger from '@/components/atom/Button/VButtonBurger.vue'
 import { useGlobalStore } from '@/stores/global.store'
 import { useWindowScroll } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
@@ -9,6 +10,7 @@ const { arrivedState, y } = useWindowScroll({ behavior: 'smooth' })
 const displayHeaderMenuMobile = ref(false)
 const store = useGlobalStore()
 const { header } = storeToRefs(store)
+const burger = ref<InstanceType<typeof VButtonBurger> | null>(null)
 
 async function setDisplayHeaderMenuMobile() {
   const body: HTMLElement | null = document.querySelector('body')
@@ -89,7 +91,11 @@ const mobileNavigationItems: Ref<StrapiNavigationItemInterface[]> = computed(() 
             >
               {{ header.bookCta.title }}
             </VButton>
-            <VButtonBurger label="ouvrir menu de navigation" @click="setDisplayHeaderMenuMobile" />
+            <VButtonBurger
+              ref="burger"
+              label="ouvrir menu de navigation"
+              @click="setDisplayHeaderMenuMobile"
+            />
           </div>
         </div>
       </div>
@@ -99,6 +105,7 @@ const mobileNavigationItems: Ref<StrapiNavigationItemInterface[]> = computed(() 
         v-if="displayHeaderMenuMobile"
         :navigation-items="mobileNavigationItems"
         :class="{ 'pt-[10.375rem]': y === 0 }"
+        @close-mobile-menu="burger?.$el.click()"
       />
     </transition>
   </header>
