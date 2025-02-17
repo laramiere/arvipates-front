@@ -12,4 +12,5 @@ export interface HeroInterface extends StrapiComponentBaseInterface {
   pictureMobile: StrapiPictureInterface
   scrollcta?: StrapiCtaInterface
   cta?: StrapiCtaInterface
+  downloadCta?: StrapiCtaInterface
 }

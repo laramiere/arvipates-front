@@ -1,4 +1,4 @@
-import type { ComponentNameType } from '@/interfaces'
+import type { ComponentNameType, StrapiPictureInterface } from '@/interfaces'
 
 export type StrapiComponentName = ComponentNameType
 export interface StrapiBaseInterface {
@@ -35,6 +35,7 @@ export interface StrapiCtaInterface {
   external: boolean
   visible: boolean
   picto: string
+  downloadMedia?: StrapiPictureInterface
 }
 export interface StrapiSocialLinkInterface {
   id: number

@@ -35,7 +35,23 @@ const getPagesQueryString = function (path: string) {
             },
           },
           [ComponentName.Hero]: {
-            populate: '*',
+            populate: {
+              pictureDesktop: {
+                populate: '*',
+              },
+              pictureMobile: {
+                populate: '*',
+              },
+              downloadCta: {
+                populate: '*',
+              },
+              scrollcta: {
+                populate: '*',
+              },
+              cta: {
+                populate: '*',
+              },
+            },
           },
           [ComponentName.HeroHome]: {
             populate: '*',
