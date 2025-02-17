@@ -61,7 +61,7 @@ const config = useRuntimeConfig()
           </div>
         </div>
         <VButton
-          v-if="contentBlockData.cta"
+          v-if="contentBlockData.cta && contentBlockData.cta.visible"
           :external="contentBlockData.cta.external"
           :href="contentBlockData.cta.href"
         >

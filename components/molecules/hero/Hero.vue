@@ -5,6 +5,18 @@ defineProps<HeroInterface>()
 const config = useRuntimeConfig()
 const hero = ref<HTMLElement | null>(null)
 const { handleScrollTo } = useScrollTo(hero)
+function handleDownloadPdf(downloadLink: string, downloadName: string) {
+  // create element <a> for download PDF
+  const link = document.createElement('a')
+  link.href = downloadLink
+  link.target = '_blank'
+  link.download = downloadName
+
+  // Simulate a click on the element <a>
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
 </script>
 
 <template>
@@ -29,13 +41,25 @@ const { handleScrollTo } = useScrollTo(hero)
       >
         {{ cta.title }}
       </VButton>
-      <VButtonSimple
-        v-if="scrollcta"
-        class="w-auto"
-        @click="handleScrollTo"
+      <div
+        v-if="scrollcta || downloadCta"
+        class="flex flex-col items-center justify-center laptop:flex-row"
       >
-        {{ scrollcta.title }}
-      </VButtonSimple>
+        <VButtonSimple
+          v-if="scrollcta"
+          class="w-auto [&:not(:last-child)]:mb-2 laptop:[&:not(:last-child)]:mb-0 laptop:[&:not(:last-child)]:mr-2"
+          @click="handleScrollTo"
+        >
+          {{ scrollcta.title }}
+        </VButtonSimple>
+        <VButtonSimple
+          v-if="downloadCta && downloadCta.downloadMedia"
+          class="w-auto"
+          @click="handleDownloadPdf(`${config.public.apiBaseUrl}${downloadCta.downloadMedia?.url}`, downloadCta.downloadMedia.name)"
+        >
+          {{ downloadCta.title }}
+        </VButtonSimple>
+      </div>
     </div>
     <picture class="relative z-0 h-auto w-full">
       <source
