@@ -24,6 +24,14 @@ export default withNuxt(
       'node/prefer-global/process': 'off',
     },
   },
+  {
+    files: ['server/**/*.ts'],
+    rules: {
+      'no-console': 'off',
+      'node/no-process-env': 'off',
+      'node/prefer-global/process': 'off',
+    },
+  },
 )
 
 // export default antfu({

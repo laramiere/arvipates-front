@@ -26,7 +26,6 @@ module.exports = {
         NUXT_PUBLIC_SEO_SITE_URL: 'https://preprod.arvipates.fr',
         NUXT_PUBLIC_SEO_NAME: 'preprod.arvipates',
         NUXT_PUBLIC_API_BASE_URL: 'https://api-preprod.arvipates.fr',
-
       },
     },
   ],
