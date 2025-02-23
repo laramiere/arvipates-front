@@ -11,6 +11,8 @@ const ContentBlockCardWithBg = resolveComponent('ContentBlockCardWithBg')
 const Map = resolveComponent('Map')
 const PictureWall = resolveComponent('PictureWall')
 const Card = resolveComponent('Card')
+const Book = resolveComponent('Book')
+
 const route = useRoute()
 
 const getComponent = function (name: string) {
@@ -33,6 +35,8 @@ const getComponent = function (name: string) {
       return PictureWall
     case ComponentName.Card:
       return Card
+    case ComponentName.Book:
+      return Book
   }
 }
 const { data } = await useAsyncData<GlobalPageDataResponse>(`${route.params.slug}`, async () => {

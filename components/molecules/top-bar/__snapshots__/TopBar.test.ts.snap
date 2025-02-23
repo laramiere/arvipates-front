@@ -12,7 +12,7 @@ exports[`topBar > should render correct HTML 1`] = `
         </ul>
       </nav>
     </div>
-    <div data-v-04de395c="" class="c-top-bar__info"><a data-v-04de395c="" class="text-black-100" target="_blank" aria-label="Visualisez itinéraire dans un nouvel onglet" href="toto.fr">Les Hottes Ouest - 74440 VERCHAIX</a></div>
+    <div data-v-04de395c="" class="c-top-bar__info"><a data-v-04de395c="" class="text-sm text-black-100 laptop:text-base" target="_blank" aria-label="Visualisez itinéraire dans un nouvel onglet" href="toto.fr">Les Hottes Ouest - 74440 VERCHAIX</a></div>
   </div>
 </div>"
 `;
