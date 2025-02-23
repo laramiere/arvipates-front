@@ -8,6 +8,7 @@ export enum ComponentName {
   ContentBlockCardWithBg = 'custom.content-block-card-with-bg',
   Map = 'custom.map',
   PictureWall = 'wall.picture-wall',
+  Book = 'custom.book',
 }
 
 export type HeroName = ComponentName.Hero
@@ -19,5 +20,6 @@ export type ImageWithTextBlockName = ComponentName.ImageWithTextBlock
 export type ContentBlockCardWithBgName = ComponentName.ContentBlockCardWithBg
 export type MapName = ComponentName.Map
 export type WallName = ComponentName.PictureWall
+export type BookName = ComponentName.Book
 
-export type ComponentNameType = 'card.card' | 'custom.hero' | 'custom.hero-home' | 'timetable.timetable' | 'custom.slider' | 'custom.image-with-text-block' | 'custom.content-block-card-with-bg' | 'custom.map' | 'wall.picture-wall'
+export type ComponentNameType = 'custom.book' | 'card.card' | 'custom.hero' | 'custom.hero-home' | 'timetable.timetable' | 'custom.slider' | 'custom.image-with-text-block' | 'custom.content-block-card-with-bg' | 'custom.map' | 'wall.picture-wall'
