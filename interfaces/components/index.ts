@@ -1,3 +1,4 @@
+export * from './Book.interface'
 export * from './Card.interface'
 export * from './ContentBlock.interface'
 export * from './Hero.interface'

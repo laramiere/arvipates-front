@@ -38,7 +38,7 @@ const getAddress = computed(() => {
       <div class="c-top-bar__info">
         <a
           v-if="props.topBar?.address?.href"
-          class="text-black-100"
+          class="text-sm  text-black-100 laptop:text-base"
           target="_blank"
           aria-label="Visualisez itinéraire dans un nouvel onglet"
           :href="props.topBar.address.href"
