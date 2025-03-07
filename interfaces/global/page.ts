@@ -2,6 +2,7 @@ import type {
   BookInterface,
   CardInterface,
   ContentBlockCardWithBg,
+  FullWysiwygInterface,
   HeroHomeComponentInterface,
   HeroInterface,
   ImageWithTextBlock,
@@ -13,7 +14,7 @@ import type {
   TimetableInterface,
 } from '@/interfaces'
 
-export type dynamicZoneType = BookInterface | CardInterface | HeroInterface | HeroHomeComponentInterface | TimetableInterface | SliderInterface | ImageWithTextBlock | ContentBlockCardWithBg | MapInterface
+export type dynamicZoneType = FullWysiwygInterface | BookInterface | CardInterface | HeroInterface | HeroHomeComponentInterface | TimetableInterface | SliderInterface | ImageWithTextBlock | ContentBlockCardWithBg | MapInterface
 
 export interface PageInterface extends StrapiBaseInterface {
   dynamicZone: dynamicZoneType[]

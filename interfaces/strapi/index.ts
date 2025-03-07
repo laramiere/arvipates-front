@@ -1,4 +1,5 @@
 export * from './base'
 export * from './card'
 export * from './picture'
+export * from './richtext.interface'
 export * from './richtextBlock'
