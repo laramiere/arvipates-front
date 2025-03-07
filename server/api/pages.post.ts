@@ -19,6 +19,9 @@ const getPagesQueryString = function (path: string) {
       },
       dynamicZone: {
         on: {
+          [ComponentName.FullWysiwyg]: {
+            populate: '*',
+          },
           [ComponentName.Book]: {
             populate: '*',
           },
