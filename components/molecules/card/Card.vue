@@ -5,7 +5,7 @@ defineProps<StrapiCardComponentInterface>()
 </script>
 
 <template>
-  <div class="card overflow-hidden rounded-t-global bg-black-100 pb-16 pt-10 desktop:py-20">
+  <div v-if="card?.sections" class="card overflow-hidden rounded-t-global bg-black-100 pb-16 pt-10 desktop:py-20">
     <div class="container-xl container mx-auto px-[1.5625rem] desktop:px-0">
       <div
         v-for="section in card.sections"
