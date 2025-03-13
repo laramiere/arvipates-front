@@ -24,6 +24,16 @@ export default {
       serif: ['Rufina', 'serif'],
     },
     extend: {
+      keyframes: {
+        levitation: {
+          '0%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10%)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        levitation: 'levitation 20s ease-in-out infinite',
+      },
       backgroundImage: {
         flickerW: 'url(\'/images/flicker_bg_w.jpg\')',
         flickerB: 'url(\'/images/flicker_bg_b.jpg\')',
