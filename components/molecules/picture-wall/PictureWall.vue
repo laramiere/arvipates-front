@@ -3,6 +3,16 @@ import type { PictureWallInterface } from '@/interfaces'
 
 const props = defineProps<PictureWallInterface>()
 const config = useRuntimeConfig()
+const target = ref(null)
+const targetVisible = useElementVisibility(target)
+const startAnimation = ref(false)
+watch(targetVisible, (value) => {
+  if (value) {
+    setTimeout(() => {
+      startAnimation.value = true
+    }, 500)
+  }
+})
 </script>
 
 <template>
@@ -19,12 +29,15 @@ const config = useRuntimeConfig()
       >
       <div
         v-if="props.pictures.length"
+        ref="target"
         class="c-insta__content relative z-10 grid grid-cols-2 gap-5 tablet:w-2/3 tablet:gap-8 laptop:grid-cols-3"
       >
         <div
-          v-for="item in props.pictures"
+          v-for="(item, key) in props.pictures"
           :key="`pictureWall-${item.id}`"
-          class="relative w-full overflow-hidden rounded-global pt-[100%]"
+          class="relative w-full origin-bottom-left overflow-hidden rounded-global pt-[100%] opacity-0"
+          :class="{ 'rotate-0 opacity-100': startAnimation, 'rotate-6': !startAnimation }"
+          :style="{ transitionDelay: `${key * 100}ms` }"
         >
           <a
             :href="props.link"
@@ -40,3 +53,9 @@ const config = useRuntimeConfig()
     </div>
   </section>
 </template>
+
+<style scoped>
+.c-insta__content > div {
+  transition: all 1s var(--animation-linear);
+}
+</style>

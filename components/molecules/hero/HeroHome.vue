@@ -4,7 +4,7 @@ import type { HeroHomeComponentInterface } from '@/interfaces'
 defineProps<HeroHomeComponentInterface>()
 
 const config = useRuntimeConfig()
-
+const { y } = useWindowScroll()
 const hero = ref<HTMLElement | null>(null)
 const heroContent = ref<HTMLElement | null>(null)
 const { height, loaded } = useHeightGenerator(heroContent)
@@ -61,18 +61,21 @@ const { handleScrollTo } = useScrollTo(hero)
     >
       <div
         v-if="pictureLeft"
-        class="absolute bottom-[-84px] left-[-70px] w-[160px] laptop:bottom-[-260px] laptop:left-0 laptop:w-auto"
+        class="absolute bottom-[-84px] left-[-70px] w-[160px] animate-levitation laptop:bottom-[-260px] laptop:left-0 laptop:w-auto"
       >
         <img
+          :class="{ '-translate-y-[200%]': y > 50, 'translate-y-0': y < 50 }"
           :src="`${config.public.apiBaseUrl}${pictureLeft.url}`"
           :alt="`${config.public.apiBaseUrl}${pictureLeft.alternativeText}`"
         >
       </div>
       <div
         v-if="pictureRight"
-        class="absolute right-[-12px] top-[-16px] w-[110px] laptop:top-[30px] laptop:w-auto"
+        class="absolute right-[-12px] top-[-16px] w-[110px] animate-levitation laptop:top-[30px] laptop:w-auto"
       >
         <img
+          :class="{ '-translate-y-full': y > 50, 'translate-y-0': y < 50 }"
+          class="delay-1000"
           :src="`${config.public.apiBaseUrl}${pictureRight.url}`"
           :alt="`${config.public.apiBaseUrl}${pictureRight.alternativeText}`"
         >
@@ -91,17 +94,23 @@ const { handleScrollTo } = useScrollTo(hero)
 
 <style lang="scss" scoped>
 .c-hero {
+
   &__content {
     .scroll {
       top: calc(100% + 100px)
     }
   }
+
   &__cta {
     top: 38%;
   }
 
   &__media {
     transition: var(--animation-bounce);
+
+    img {
+      transition: all 1s ease-in-out;
+    }
 
     > div {
       &:first-child {
