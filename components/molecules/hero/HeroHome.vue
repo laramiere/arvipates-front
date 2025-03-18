@@ -64,7 +64,7 @@ const { handleScrollTo } = useScrollTo(hero)
         class="absolute bottom-[-84px] left-[-70px] w-[160px] animate-levitation laptop:bottom-[-260px] laptop:left-0 laptop:w-auto"
       >
         <img
-          :class="{ '-translate-y-[200%]': y > 50, 'translate-y-0': y < 50 }"
+          :class="{ 'translate-y-[-200%]': y > 50, 'translate-y-0': y < 50 }"
           :src="`${config.public.apiBaseUrl}${pictureLeft.url}`"
           :alt="`${config.public.apiBaseUrl}${pictureLeft.alternativeText}`"
         >
