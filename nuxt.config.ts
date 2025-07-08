@@ -7,6 +7,14 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
+  devServer: {
+    host: 'dev.arvipates.fr',
+    port: 3000,
+    https: {
+      cert: './certs/dev.arvipates.fr+2.pem',
+      key: './certs/dev.arvipates.fr+2-key.pem',
+    },
+  },
   css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {
@@ -18,6 +26,11 @@ export default defineNuxtConfig({
     public: {
       apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || 'http://localhost:1337',
       seoSiteUrl: process.env.NUXT_PUBLIC_SEO_SITE_URL || 'http://localhost:3000',
+      scripts: {
+        googleTagManager: {
+          id: process.env.NUXT_PUBLIC_SCRIPTS_GOOGLE_TAG_MANAGER_ID || 'GTM-54W7RFWV',
+        },
+      },
     },
   },
   components: [
@@ -35,6 +48,7 @@ export default defineNuxtConfig({
     'nuxt-site-config',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
+    '@nuxt/scripts',
   ],
   fonts: {
     provider: 'google',
@@ -77,6 +91,11 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'fr',
       },
+    },
+  },
+  scripts: {
+    registry: {
+      googleTagManager: true,
     },
   },
 })
