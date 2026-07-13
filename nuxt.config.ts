@@ -88,6 +88,52 @@ export default defineNuxtConfig({
           href: '/favicon/favicon.svg',
         },
       ],
+      script: [{
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Restaurant',
+          'name': 'Arvi\'Pâtes',
+          'image': 'https://arvipates.fr/arvipates.png',
+          'url': 'https://arvipates.fr',
+          'telephone': '+33988386940',
+          'servesCuisine': ['Savoyarde', 'Italienne'],
+          'priceRange': '€€',
+          'address': {
+            '@type': 'PostalAddress',
+            'streetAddress': '435 Route des Hottes',
+            'addressLocality': 'Verchaix',
+            'postalCode': '74440',
+            'addressRegion': 'Haute-Savoie',
+            'addressCountry': 'FR',
+          },
+          'geo': {
+            '@type': 'GeoCoordinates',
+            'latitude': 46.0894,
+            'longitude': 6.6967,
+          },
+          'openingHoursSpecification': [
+            {
+              '@type': 'OpeningHoursSpecification',
+              'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+              'opens': '11:00',
+              'closes': '15:00',
+            },
+            {
+              '@type': 'OpeningHoursSpecification',
+              'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+              'opens': '18:00',
+              'closes': '00:00',
+            },
+          ],
+          'acceptsReservations': 'https://arvipates.fr/reserver',
+          'hasMenu': 'https://arvipates.fr/la-carte',
+          'sameAs': [
+            'https://facebook.com/people/ArviP%C3%A2tes/61558847707094/',
+            'https://instagram.com/arvi_pates/',
+          ],
+        }),
+      }],
       htmlAttrs: {
         lang: 'fr',
       },
