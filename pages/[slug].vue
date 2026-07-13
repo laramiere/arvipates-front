@@ -15,6 +15,7 @@ const Book = resolveComponent('Book')
 const FullWysiwyg = resolveComponent('FullWysiwyg')
 
 const route = useRoute()
+const config = useRuntimeConfig()
 
 const getComponent = function (name: string) {
   switch (name) {
@@ -56,6 +57,16 @@ useSeoMeta({
   description: data.value?.data[0].seo ? data.value?.data[0].seo.description : 'Arvipâtes',
   ogTitle: data.value?.data[0].seo ? `${data.value?.data[0].seo.title}` : 'Arvipâtes',
   ogDescription: data.value?.data[0].seo ? data.value?.data[0].seo.description : 'Arvipâtes',
+})
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: computed(() => {
+        return `${config.public.seoSiteUrl}${route.path}`
+      }),
+    },
+  ],
 })
 </script>
 
