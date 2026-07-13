@@ -21,7 +21,7 @@ onMounted(async () => {
         href="${address.href}"
         target="_blank"
       >
-        <img src="images/pin.png" />
+        <img src="images/pin.png" alt="pin map"/>
         <span class="leading-none block mt-[10px] text-2xl uppercase text-black-400">
           ${address.title}
         </span>

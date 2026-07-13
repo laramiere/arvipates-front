@@ -40,7 +40,7 @@ const { handleScrollTo } = useScrollTo(hero)
         class="scroll absolute left-1/2 flex -translate-x-1/2 laptop:hidden"
         @handle-scroll-down="handleScrollTo"
       >
-        Défiler vers le basss
+        Défiler vers le bas
       </CustomScrollButton>
     </div>
     <picture>
@@ -86,7 +86,7 @@ const { handleScrollTo } = useScrollTo(hero)
         class="hidden laptop:flex"
         @handle-scroll-down="handleScrollTo"
       >
-        Défiler vers le basss
+        Défiler vers le bas
       </CustomScrollButton>
     </div>
   </div>
